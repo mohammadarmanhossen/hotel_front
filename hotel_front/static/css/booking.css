@@ -1,0 +1,44 @@
+
+.nav-item a:hover{
+  background: #a9abac;
+}
+
+.booking-img img {
+  width: 100%; /* Make the image responsive to its container's width */
+  height: 600px; /* Set a fixed height */
+  object-fit: cover; /* Ensures the image scales and fills the container without distortion */
+  border-radius: 10px; /* Smooth corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+
+}
+
+.booking-img img:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+/* General Image Styling */
+.booking-img img {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.booking-img img:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+  .booking-img {
+    margin-bottom: 20px; /* Add spacing for small screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .booking-img img {
+    max-height: 300px; /* Limit image height on large screens */
+    object-fit: cover; /* Ensure the image doesn't distort */
+  }
+}
