@@ -1,0 +1,18 @@
+.nav-item a:hover{
+    background: #a9abac;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .services-section {
+        height: 220vh; /* Adjust height for this specific range */
+    }
+}
+
+
+@media (min-width: 768px) and (max-width:1024px) {
+    .services-section {
+        height:200vh; /* Adjust height for this specific range */
+    }
+}
+
+

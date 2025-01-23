@@ -1,0 +1,136 @@
+
+.nav-item a:hover{
+    background: #a9abac;
+}
+
+.main-container {
+    background-color: #f8f9fa; /* Light background */
+    padding: 50px 20px;
+  }
+  .container2 h2 {
+    color: #343a40; /* Dark text */
+  }
+  .container2 p {
+    color: #6c757d; /* Secondary text */
+  }
+  .card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+ 
+
+
+  .c-item{
+    height: 550px;
+  }
+  .c-img{
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+  }
+ 
+
+
+
+/* Apply Cinzel to headings in the carousel */
+.carousel-caption h1, .carousel-caption h4, .carousel-caption h5 {
+    font-family: 'Cinzel', serif;
+  }
+  
+  /* Apply Source Sans Pro to paragraphs and links in the carousel */
+  .carousel-caption p, .carousel-caption a {
+    font-family: 'Raleway', sans-serif;
+  }
+
+
+
+
+  /* General Container Styling */
+.search-container {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Restrict max width */
+    margin: 0 auto; /* Center align */
+    background-color: #979da3; /* Light gray */
+  }
+  
+  /* Dropdown, Input, and Button Styling */
+  .search-container select,
+  .search-container input,
+  .search-container button {
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 10px;
+  }
+  
+  .search-container select {
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+  
+  .search-container input {
+    border: 1px solid #ddd;
+  }
+  
+  .search-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    /* Stack elements vertically on smaller screens */
+    .search-container {
+      padding: 20px;
+    }
+
+  
+    .search-container .d-flex {
+      flex-direction: column; /* Stack elements */
+      gap: 10px; /* Add spacing between elements */
+    }
+  
+    .search-container select,
+    .search-container input,
+    .search-container button {
+      width: 100%; /* Full width */
+    }
+    .hotel-titel {
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      
+    }
+
+  }
+  
+  @media (min-width: 769px) {
+    .search-container {
+      padding: 10px 20px;
+    }
+
+  
+    .search-container select,
+    .search-container input {
+      width: auto; /* Allow elements to fit their content */
+    }
+  
+    .search-container button {
+      width: auto;
+    }
+
+  }
+  
+

@@ -1,0 +1,47 @@
+
+.nav-item a:hover{
+  background: #a9abac;
+}
+
+.image-gallery {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between images */
+  padding: 20px; /* Padding around the gallery */
+  background-color: #f8f9fa; /* Light background for contrast */
+  border-radius: 10px; /* Smooth edges for the gallery */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+}
+
+.booking-img {
+  overflow: hidden; /* Ensures the image fits inside the container */
+  border-radius: 10px; /* Smooth corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow around individual images */
+}
+
+.booking-img img {
+  width: 100%; /* Responsive image width */
+  height: 100%; /* Ensures the image covers the container */
+  object-fit: cover; /* Maintains aspect ratio and fills the container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+.booking-img:hover img {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+
+
+/* Responsive Layout Adjustments */
+@media (max-width: 768px) {
+  .booking-img {
+    margin-bottom: 20px; /* Add spacing for small screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .booking-img img {
+    max-height: 300px; /* Limit image height on large screens */
+    object-fit: cover; /* Ensure the image doesn't distort */
+  }
+}
