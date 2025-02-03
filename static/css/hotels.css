@@ -1,3 +1,7 @@
-.nav-item a{
-    background: #b4b4b4;
-}
+
+
+.navbar-nav .nav-link:hover {
+    color: rgb(233, 106, 2) !important; 
+    transition: color 0.3s ease-in-out; 
+  }
+  

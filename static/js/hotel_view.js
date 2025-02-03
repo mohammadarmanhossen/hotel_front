@@ -29,21 +29,25 @@ const displayService = (hotels) => {
   hotels.forEach((hotel) => {
     const li = document.createElement("li");
     const imageUrl = hotel.image.startsWith("http") ? hotel.image : `${baseURL}${hotel.image}`;
+    const descriptionWords = hotel.description.split(" ").slice(0, 10).join(" ") + (hotel.description.split(" ").length > 10 ? "..." : "");
+    const namenWords = hotel.hotel_name.split(" ").slice(0, 2).join(" ") + (hotel.description.split(" ").length > 10 ? "..." : "");
+    const addressWords = hotel.address.split(" ").slice(0, 5).join(" ") + (hotel.description.split(" ").length > 10 ? "..." : "");
+
     li.innerHTML = `
-      <div class="card h-100 shadow-lg box-shadow-none border-0 rounded-3">
+      <div class="card shadow-lg box-shadow-none border-0 rounded-3">
         <div class="ratio ratio-16x9">
           <img src="${imageUrl}" class="card-img-top" alt="Hotel Image" />
         </div>
         <div class="card-body p-4 d-flex flex-column">
-          <h2 class="hotel-title fw-bold mb-3 text-black">${hotel.hotel_name}</h2>
-          <h4 class="hotel-address text-muted mb-2">
-            <i class="bi bi-geo-alt-fill text-danger"></i> ${hotel.address}
-          </h4>
+          <h2 class="hotel-title fw-bold mb-3 text-black">${namenWords}</h2>
+          <h6 class="hotel-address text-muted mb-2">
+            <i class="bi bi-geo-alt-fill text-danger"></i> ${addressWords}
+          </h6>
           <div class="d-flex align-items-baseline mb-3">
             <h5 class="hotel-price fw-bold text-success me-2"> $${hotel.price_per_night} </h5>
             <span class="fw-bold text-muted">/per room</span>
           </div>
-          <p class="hotel-description text-secondary">${hotel.description}</p>
+          <p class="hotel-description text-secondary">${descriptionWords}</p>
           <p class="hotel-description text-secondary">${hotel.district_name}</p>
         </div>
         <div class="card-footer d-flex justify-content-between bg-light">
@@ -177,12 +181,25 @@ const hotel_view_booked = (event) => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert("sucessfully Booked Hotel")
+        swal.fire({
+          title: 'Success!',
+          text: 'Hotel Booking Successfully.',
+          icon: 'success',
+          confirmButtonText: 'Great!',
+        });
       })
    
     }
   else{
-      alert("place login")
-      window.location.href = "login.html";
+      swal.fire({
+        title: 'Error!',
+        text: 'Please Login Your Account',
+        icon: 'error',
+        confirmButtonText: 'Okay',
+        
+      }).then(()=>{
+        window.location.href = "login.html";
+      })
+     
     }
   };

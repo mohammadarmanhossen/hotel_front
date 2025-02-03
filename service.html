@@ -1,125 +1,118 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="static/css/style.css" />
-    <link rel="stylesheet" href="static/css/service.css">
-    <link rel="stylesheet" href="static/css/login.css" />
-    <link rel="stylesheet" href="static/css/registration.css" />
-    <link rel="stylesheet" href="static/css/footer.css" />
-    <link rel="stylesheet" href="static/css/hotel_view.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="static/css/service.css">
+  <link rel="stylesheet" href="static/css/login.css" />
+  <link rel="stylesheet" href="static/css/registration.css" />
+  <link rel="stylesheet" href="static/css/footer.css" />
+  <link rel="stylesheet" href="static/css/hotel_view.css">
+  <link rel="stylesheet" href="static/css/navbar.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
     crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-    <header>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-      <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img id="hotel_img p-5" class="rounded" src="Images/Drame.webp" alt="Logo" style="height: 40px;">
-            <a href="home.html" class="text-decoration-none text-dark"> <h1 class="logo fs-3 fw-bold ms-2 mb-0 text-dark">VILLAGIO</h1></a>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img id="hotel_img p-5" class="rounded" src="Images/Drame.webp" alt="Logo" style="height: 40px;">
+          <a href="home.html" class="text-decoration-none text-dark">
+            <h1 class="logo fs-3 fw-bold ms-2 mb-0 text-dark">VILLAGIO</h1>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon bg-dark"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto" id="navbarElement"> 
-              <!-- <li class="nav-item"><a class="nav-link text-black fw-bold px-3 mx-3" href="home.html">HOME</a></li>
-              <li class="nav-item"><a class="nav-link text-black fw-bold  px-3 mx-3" href="service.html">SERVICES</a></li>
-              <li class="nav-item"><a class="nav-link text-black fw-bold  px-3 mx-3" href="booking.html">BOOKING</a></li>
-              <li class="nav-item"><a class="nav-link text-black  fw-bold px-3 mx-3" href="contact.html">CONTACT</a></li>
-          
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Profile</button>
-                <ul class="dropdown-menu text-center">
-                    <li><a class="fw-bold text-decoration-none bg-primary px-3 text-black p-2 rounded" href="deposite.html">Deposite</a><button
-                        class="dropdown-item text-decoration-none" type="button"></button></li>
-                        <li>
-                          <form id="logout" onsubmit="handleLogout(event)">
-                            <div class="text-center">
-                              <button type="submit" class="btn btn-danger px-3">Logout</button>
-                            </div>
-                          </form>
-                      </li>
-                  </ul>
-                </div> -->
-            </ul>
-          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon bg-dark"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center" id="navbarElement">
+
+
+
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
     <main>
 
-     
+
       <div class="services-section align-items-center justify-content-center ">
         <div class="container text-center">
           <!-- Section Title -->
           <div class="offer d-flex flex-column align-items-center justify-content-center text-center py-5  rounded">
             <h1 class="fw-bold display-4 p-5 text-dark">Explore Our Services</h1>
-  
-          <div class="row g-4">
-            <!-- Service 1 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card border-0 shadow p-4 hover-effect">
-                <i class="bi bi-house fs-1 text-primary mb-3"></i>
-                <h5 class="fw-bold">Luxury Rooms</h5>
-                <p>Enjoy our premium rooms with breathtaking views and top-notch amenities.</p>
+
+            <div class="row g-4">
+              <!-- Service 1 -->
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card border-0 shadow p-4 hover-effect">
+                  <i class="bi bi-house fs-1 text-primary mb-3"></i>
+                  <h5 class="fw-bold">Luxury Rooms</h5>
+                  <p>Enjoy our premium rooms with breathtaking views and top-notch amenities.</p>
+                </div>
               </div>
-            </div>
-            <!-- Service 2 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card border-0 shadow p-4 hover-effect">
-                <i class="bi bi-house fs-1 text-primary mb-3"></i>
-                <h5 class="fw-bold">Spa & Wellness</h5>
-                <p>Rejuvenate with our top-class spa and wellness services designed for relaxation.</p>
+              <!-- Service 2 -->
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card border-0 shadow p-4 hover-effect">
+                  <i class="bi bi-house fs-1 text-primary mb-3"></i>
+                  <h5 class="fw-bold">Spa & Wellness</h5>
+                  <p>Rejuvenate with our top-class spa and wellness services designed for relaxation.</p>
+                </div>
               </div>
-            </div>
-            <!-- Service 3 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card border-0 shadow p-4 hover-effect">
-                <i class="bi bi-house fs-1 text-primary mb-3"></i>
-                <h5 class="fw-bold">Conference Rooms</h5>
-                <p>Host successful meetings in our well-equipped and spacious conference rooms.</p>
+              <!-- Service 3 -->
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card border-0 shadow p-4 hover-effect">
+                  <i class="bi bi-house fs-1 text-primary mb-3"></i>
+                  <h5 class="fw-bold">Conference Rooms</h5>
+                  <p>Host successful meetings in our well-equipped and spacious conference rooms.</p>
+                </div>
               </div>
-            </div>
-            <!-- Service 4 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card border-0 shadow p-4 hover-effect">
-                <i class="bi bi-house fs-1 text-primary mb-3"></i>
-                <h5 class="fw-bold">Fine Dining</h5>
-                <p>Savor exquisite cuisines at our world-class restaurants with great ambiance.</p>
+              <!-- Service 4 -->
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card border-0 shadow p-4 hover-effect">
+                  <i class="bi bi-house fs-1 text-primary mb-3"></i>
+                  <h5 class="fw-bold">Fine Dining</h5>
+                  <p>Savor exquisite cuisines at our world-class restaurants with great ambiance.</p>
+                </div>
               </div>
-            </div>
-            <!-- Service 5 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card border-0 shadow p-4 hover-effect">
-                <i class="bi bi-house fs-1 text-primary mb-3"></i>
-                <h5 class="fw-bold">Pool & Gym</h5>
-                <p>Stay fit and refreshed with access to our state-of-the-art gym and pools.</p>
+              <!-- Service 5 -->
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card border-0 shadow p-4 hover-effect">
+                  <i class="bi bi-house fs-1 text-primary mb-3"></i>
+                  <h5 class="fw-bold">Pool & Gym</h5>
+                  <p>Stay fit and refreshed with access to our state-of-the-art gym and pools.</p>
+                </div>
               </div>
-            </div>
-            <!-- Service 6 -->
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card border-0 shadow p-4 hover-effect">
-                <i class="bi bi-house fs-1 text-primary mb-3"></i>
-                <h5 class="fw-bold">24/7 Service</h5>
-                <p>Experience round-the-clock service from our dedicated staff, ready to assist.</p>
+              <!-- Service 6 -->
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card border-0 shadow p-4 hover-effect">
+                  <i class="bi bi-house fs-1 text-primary mb-3"></i>
+                  <h5 class="fw-bold">24/7 Service</h5>
+                  <p>Experience round-the-clock service from our dedicated staff, ready to assist.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </main>
-    
-    
+
+
 
     <footer class="footer bg-dark text-light py-4">
       <div class="container">
@@ -148,10 +141,13 @@
             <p><i class="bi bi-telephone"></i> +1 234 567 890</p>
             <div class="social-icons d-flex gap-3">
               <div class="social-icons d-flex gap-3">
-                <a href="https://www.facebook.com/mbarmanhossen123" class="text-light"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.facebook.com/mbarmanhossen123" class="text-light"><i
+                    class="bi bi-facebook"></i></a>
                 <a href="https://x.com/ar43856" class="text-light"><i class="bi bi-twitter"></i></a>
-                <a href="https://www.instagram.com/mohammad404arman/" class="text-light"><i class="bi bi-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/armanps1/" class="text-light" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/mohammad404arman/" class="text-light"><i
+                    class="bi bi-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/armanps1/" class="text-light" target="_blank"><i
+                    class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div>
@@ -163,7 +159,7 @@
         </div>
       </div>
     </footer>
-    
+
 
     <script src="./static/js/admin.js"></script>
     <script src="./static/js/app.js"></script>
@@ -183,12 +179,10 @@
     <script src="./static/js/admin_distirct.js"></script>
     <script src="./static/js/admin_review.js"></script>
     <script src="./static/js/admin_user.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+</body>
+
 </html>
-
-
-
-
-

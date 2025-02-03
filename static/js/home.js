@@ -18,43 +18,63 @@ const allhotels = () => {
 loadServices();
 allhotels();
 
+
+
 const displayService = (hotels) => {
   console.log(hotels);
   const parent = document.getElementById("service-container");
-  parent.innerText = ''; // Clear previous results
+  parent.innerHTML = ''; // Clear previous results
+
   if (!hotels || hotels.length === 0) {
-    parent.innerHTML = '<h class="text-center fs-3 fw-bold">Hotel Not Found.</h1>';
+    parent.innerHTML = '<h2 class="text-center text-danger fw-bold mt-4">Hotel Not Found.</h2>';
     return;
   }
+
   hotels.forEach((hotel) => {
     const li = document.createElement("li");
+    li.classList.add("list-unstyled"); // Remove default list styles
+
     const imageUrl = hotel.image.startsWith("http") ? hotel.image : `${baseURL}${hotel.image}`;
+
+    // Ensure description is a string and trim excess spaces
+    const descriptionText = (hotel.description || "").trim();
+
+    // Split the description by spaces and get the first 10 words
+    const descriptionWords = descriptionText.split(/\s+/).slice(0, 10).join(" ") + "...";
+
     li.innerHTML = `
-      <div class="card h-100 shadow-lg box-shadow-none border-0 rounded-3">
-        <div class="ratio ratio-16x9">
-          <img src="${imageUrl}" class="card-img-top" alt="Hotel Image" />
+      <div class="card hotel-card shadow-lg border-0 overflow-hidden">
+        <div class="hotel-img-container">
+          <img src="${imageUrl}" class="card-img-top hotel-img" alt="Hotel Image">
         </div>
-        <div class="card-body p-4 d-flex flex-column">
-          <h2 class="hotel-title fw-bold mb-3 text-black">${hotel.hotel_name}</h2>
-          <h4 class="hotel-address text-muted mb-2">
+        <div class="card-body d-flex flex-column">
+          <h3 class="hotel-title fw-bold text-black">${hotel.hotel_name}</h3>
+          <h5 class="hotel-address text-muted mb-2">
             <i class="bi bi-geo-alt-fill text-danger"></i> ${hotel.address}
-          </h4>
+          </h5>
           <div class="d-flex align-items-baseline mb-3">
-            <h5 class="hotel-price fw-bold text-success me-2"> $${hotel.price_per_night} </h5>
+            <h4 class="hotel-price fw-bold text-success me-2">$${hotel.price_per_night}</h4>
             <span class="fw-bold text-muted">/per room</span>
           </div>
-          <p class="hotel-description text-secondary">${hotel.description}</p>
-          <p class="hotel-description text-secondary">${hotel.district_name}</p>
+          <p class="hotel-description text-secondary">${descriptionWords}</p>
+          <p class="hotel-district text-primary fw-bold">${hotel.district_name}</p>
+   
         </div>
         <div class="card-footer d-flex justify-content-between bg-light">
-          <a href="hotel_view.html?id=${hotel.id}" class="btn btn-outline-primary w-50 me-2" data-id="${hotel.id}">Details</a>
-          <a href="booking.html?id=${hotel.id}" class="btn btn-primary w-50" data-id="${hotel.id}">Booking</a>
+          <a href="hotel_view.html?id=${hotel.id}" class="btn btn-outline-primary w-50 me-2">Details</a>
+          <a href="booking.html?id=${hotel.id}" class="btn btn-primary w-50">Booking</a>
         </div>
+     
       </div>
     `;
-     parent.appendChild(li)
+    
+    parent.appendChild(li);
   });
 };
+
+
+
+
 
 let debounceTimer;
 const handleSerch = () => {

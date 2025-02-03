@@ -21,13 +21,25 @@ const contact = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-        successModal.show()
+        Swal.fire({
+          title: 'successfully !',
+           text: 'You successfully Send Messege.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        })
+
       })
     }
     else{
-      alert("Please login your account");
-      window.location.href = "login.html";
+      Swal.fire({
+        title: 'Error!',
+        text: 'Login Your Account',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      
+        }).then(()=>{
+           window.location.href="login.html";
+        })
     }
   };
   

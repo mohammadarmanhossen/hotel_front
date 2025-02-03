@@ -1,4 +1,5 @@
 
+
 const handleRegistration = (event) => {
     event.preventDefault();
     const username = getValue("username").value;
@@ -31,8 +32,20 @@ const handleRegistration = (event) => {
           body: JSON.stringify(info),
         })
           .then((res) => res.json())
-          .then((data) => console.log(data));
-          alert("confrome your email")
+          .then((data) => {
+            console.log(data);
+            Swal.fire({
+              title: 'Email Confirmed!',
+               text: 'Your email has been verified successfully. Please log in to continue.',
+              icon: 'success',
+              confirmButtonText: 'OK'
+            }).then(()=>{
+               window.location.href="login.html";
+            })
+
+
+          });
+          
       }
     } 
     
@@ -79,12 +92,18 @@ const handleRegistration = (event) => {
          if(data.token && data.user_id){
           localStorage.setItem("token",data.token);
           localStorage.setItem("user_id",data.user_id);
-          window.location.href="user_account.html";
-           alert("login successfully")
+          
+          Swal.fire({
+            title: 'Success!',
+            text: 'Your Account Successfully Login.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          }).then(()=>{
+             window.location.href="User_dashboard.html";
+          })
          }
-         const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-         errorModal.show();
-         
+
+        
         });
     }    
       
@@ -126,7 +145,16 @@ const handleLogout = (event) => {
         console.log("Logout successful", data);
         localStorage.removeItem("token");
         localStorage.removeItem("user_id");
-        window.location.href = "home.html";
+
+
+        Swal.fire({
+          title: 'Success!',
+          text: 'Your account has been successfully logged out.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then(()=>{
+           window.location.href="home.html";
+        })
         
       })
     

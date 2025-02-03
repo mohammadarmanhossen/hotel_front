@@ -8,274 +8,517 @@
   <link rel="stylesheet" href="static/css/style.css">
   <link rel="stylesheet" href="static/css/footer.css">
   <link rel="stylesheet" href="static/css/home.css">
+  <link rel="stylesheet" href="static/css/navbar.css">
   <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
     crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.all.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
 
 </head>
 
 <body class="bg-light">
   <header>
-  
+
+
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-light">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
           <img id="hotel_img p-5" class="rounded" src="Images/Drame.webp" alt="Logo" style="height: 40px;">
-          <a href="home.html" class="text-decoration-none text-dark"> <h1 class="logo fs-3 fw-bold ms-2 mb-0 text-dark">VILLAGIO</h1></a>
+          <a href="home.html" class="text-decoration-none text-dark">
+            <h4 class="logo fs-3 fw-bold ms-2 mb-0 text-dark">VILLAGIO</h4>
+          </a>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon bg-dark"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto" id="navbarElement"> 
-            <!-- <li class="nav-item"><a class="nav-link text-black fw-bold px-3 mx-3" href="home.html">HOME</a></li>
-            <li class="nav-item"><a class="nav-link text-black fw-bold  px-3 mx-3" href="service.html">SERVICES</a></li>
-            <li class="nav-item"><a class="nav-link text-black fw-bold  px-3 mx-3" href="booking.html">BOOKING</a></li>
-            <li class="nav-item"><a class="nav-link text-black  fw-bold px-3 mx-3" href="contact.html">CONTACT</a></li>
-          
-            <li class="nav-item"><a class="nav-link text-black fw-bold  px-3 mx-3" href="registration.html">SIGN UP</a></li>
-            <li class="nav-item"><a class="nav-link text-black  fw-bold px-3 mx-3"href="login.html">LOGIN</a></li> -->
-          </ul> 
+          <ul class="navbar-nav ms-auto align-items-center" id="navbarElement">
+
+
+
+          </ul>
         </div>
       </div>
     </nav>
 
-    <div id="carouselExampleCaptions" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active c-item">
-          <img src="Images/banner-02.jpg" class="d-block w-100 c-img" alt="...">
-          <div class="carousel-caption top-0 mt-5 d-none d-md-block">
-            <h1 class="fw-bold display-4 text-white">Unveiling Unmatched Luxury</h1>
-            <p class="mt-5 fs-4">Immerse yourself in a world of sophistication. From bespoke services to exquisite 
-              accommodations, every moment is designed to elevate your stay. 
-              Discover unparalleled comfort and style at our exclusive destinations..</p>
-            <button class="btn btn-warning mt-5">More Details</button>
-          </div>
-        </div>
-        <div class="carousel-item active c-item">
-          <img src="Images/banner-03.jpg" class="d-block w-100 c-img" alt="...">
-          <div class="carousel-caption top-0 mt-5 d-none d-md-block">
-            <h1 class="fw-bold display-4 text-white">Experience the epitome of luxury</h1>
-            <p class="mt-5 fs-4">Escape to nestled in the majestic mountains. Wake up to panoramic views and crisp mountain air.
-               Enjoy a range of outdoor activities, from hiking to skiing, depending on the season. After a day of adventure,
-               warm up by the fireplace with a cup of cocoa or relax at our spa. Perfect for nature 
-               enthusiasts and adventure seekers alike.</p>
-            <button class="btn btn-warning mt-5">More Details</button>
-          </div>
-        </div>
-        <div class="carousel-item active c-item">
-          <img src="Images/small-7.jpg" class="d-block w-100 c-img" alt="...">
-          <div class="carousel-caption top-0 mt-5 d-none d-md-block">
-            <h1 class="fw-bold display-4 text-white">The Perfect Stay Awaits</h1>
-            <p class="mt-5 fs-4">Discover spacious suites and exciting activities tailored to every age and interest. 
-              Our carefully selected family-friendly hotels provide a blend of comfort and entertainment, ensuring that both parents and children enjoy
-               whether you’re exploring new or simply unwinding in a cozy, welcoming environment..</p>
-            <button class="btn btn-warning mt-5">More Details</button>
-          </div>
-        </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
 
+    <main>
 
+      <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active c-item">
+            <img src="Images/banner-02.jpg" class="d-block w-100 c-img" alt="...">
+            <div
+              class="carousel-caption d-flex flex-column align-items-center text-center justify-content-center top-0 mt-5 pt-5 d-none d-md-block">
+              <h1 class="fw-bold display-6 mt-5 pt-5 px-4 r text-white rounded-3">Experience the epitome of luxury</h1>
+              <p class="mt-4 fs-4 px-3 py-2text-white rounded">Escape to nestled in the majestic mountains. Wake up to
+                panoramic views and crisp.</p>
 
-    <div class="main-container container py-5">
-      <div class="row g-4 align-items-center">
-        <!-- Left Column -->
-        <div class="col-lg-4 col-md-6 col-12 text-center">
-          <img class="img-fluid shadow-sm rounded" src="/Images/small_3.jpg" alt="Hotel View">
-        </div>
-        
-        <!-- Center Column -->
-        <div class="hotel-titel col-lg-4 col-md-6 col-12 text-center text-md-start">
-          <h5 class="fw-bold text-muted">OUR HOTEL</h5>
-          <h2 class="fw-bold">Best Hotel <br> & Sea View</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, accusamus.</p>
-        </div>
-        
-        <!-- Right Column -->
-        <div class="col-lg-4 col-md-12 col-12">
-          <div class="d-flex flex-column gap-3">
-            <!-- Card 1 -->
-            <div class="card text-center p-4 shadow-sm">
-              <img src="/Images/facebook.png " class="card-img-top mx-auto" style="width: 50px;" alt="LinkedIn Icon">
-              <h2 class="fw-bold text-primary">5000+</h2>
-              <h4 class="text-secondary">Connections</h4>
-              <p class="text-muted">This is Facebook profile</p>
-            </div>
-            <!-- Card 2 -->
-            <div class="card text-center p-4 shadow-sm">
-              <img src="/Images/instaram.jpg" class="card-img-top mx-auto" style="width: 50px;" alt="LinkedIn Icon">
-              <h2 class="fw-bold text-primary">5000+</h2>
-              <h4 class="text-secondary">Connections</h4>
-              <p class="text-muted">This is Instagram profile</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-
-    <div class="search-container d-flex flex-column flex-md-row align-items-center justify-content-center p-4 bg-light">
-      <div class="d-flex align-items-center justify-content-center gap-5 w-100 ">
-        <!-- Dropdown -->
-        <select id="district" class="form-select w-100 w-md-auto p-2 border-0 rounded" required>
-          <option value="ssl">All District</option>
-          <!-- Add other options here -->
-        </select>
-        <!-- Search Input -->
-        <input type="text" placeholder="Search Hotel Name" id="search" 
-               class="form-control w-100 w-md-auto p-2 border-0 rounded">
-        <!-- Search Button -->
-        <button type="button" onclick="handleSearch()" 
-                class="btn btn-primary w-100 w-md-auto p-2 border-0 rounded">
-          Search
-        </button>
-      </div>
-    </div>
-
-
-
-
-    
-
-
-    <div class="swiffy-slider slider-item-show3  bg-white">
-      <ul id="service-container" class="slider-container py-4">
-
-      </ul>
-      <button type="button" class="slider-nav" aria-label="Go left"></button>
-      <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
-      <div class="slider-indicators">
-        <button class="" aria-label="Go to slide"></button>
-        <button aria-label="Go to slide" class=""></button>
-        <button aria-label="Go to slide" class=""></button>
-        <button aria-label="Go to slide" class=""></button>
-        <button aria-label="Go to slide" class="active"></button>
-      </div>
-    </div>
-
-
-
-
-  <!-- offer slider  -->
-  <div class="offer d-flex flex-column align-items-center justify-content-center text-center py-5 shadow-lg rounded">
-    <h1 class="fw-bold display-4 text-dark">🔥 Exclusive Offer 🔥</h1>
-    <h2 class="fw-bold text-warning mt-3">Best Discount <span class="text-danger">20-30% OFF</span></h2>
-    <p class="mt-3 text-dark fs-5">Hurry up! Limited time only.</p>
-  </div>
-  
-    <div class="swiffy-slider slider-nav-visible slider-nav-animation slider-nav-animation-slow" id="animatedText">
-
-      <ul class="slider-container" id="container1">
-          <li id="slide1" class="">
-              <div>
-                  <img src="Images/banner-01.jpg" loading="lazy" class=" img w-100">
-                  <h4 class="display-1 fw-bold text-white custom-animated-text position-absolute top-50 start-50 translate-middle">20% Off Weekend Getaways</h4>
+              <div
+                class="main-container  text-center align-items-center justify-content-center bg-scendry rounded-3 pt-4 p-4">
+                <div
+                  class="search-container d-flex flex-md-row align-items-center justify-content-center w-75bg-light ">
+                  <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 w-100">
+                    <select id="district" class="form-select w-md-auto  border-0" required>
+                      <option value="ssl">All District</option>
+                    </select>
+                    <input type="text" placeholder="Search Hotel Name" id="search"
+                      class="form-control w-md-auto p-2 border-0">
+                    <button type="button" onclick="handleSearch()"
+                      class="btn btn-secondary w-100 w-md-auto p-2 border-0">
+                      Search
+                    </button>
+                  </div>
+                </div>
               </div>
-  
-          </li>
-          <li id="slide2" class="">
-            <div>
-              <img src="Images/banner-02.jpg" loading="lazy" class="img w-100 ">
-              <h4 class="display-1 fw-bold text-white custom-animated-text position-absolute top-50 start-50 translate-middle">Exclusive Family Vacation Packages</h4>
-          </div>
-          </li>
-          <li id="slide3" class="">
-            <div>
-              <img src="Images/small-7.jpg" loading="lazy" class="img w-100 ">
-              <h4 class="display-1 fw-bold text-white custom-animated-text position-absolute top-50 start-50 translate-middle">30% Off Luxury Stays</h4>
-          </div>
-        </li>
-      </ul>
-  
-      <button type="button" class="slider-nav" aria-label="Go to previous"></button>
-      <button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
-  
-      <div class="slider-indicators">
-          <button aria-label="Go to slide" class=""></button>
-          <button aria-label="Go to slide" class=""></button>
-          <button aria-label="Go to slide" class=""></button>
-          <button aria-label="Go to slide" class="active"></button>
-          <button aria-label="Go to slide"></button>
-      </div> 
-  </div>
 
-    <div class="services-section  align-items-center justify-content-center ">
-      <div class="container text-center">
-        <!-- Section Title -->
-        <div class="offer d-flex flex-column align-items-center justify-content-center text-center py-5  rounded">
-          <h1 class="fw-bold display-4 p-5 text-dark">Explore Our Services</h1>
+            </div>
+          </div>
 
-        <div class="row g-4">
-          <!-- Service 1 -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card border-0 shadow p-4 hover-effect">
-              <i class="bi bi-house fs-1 text-primary mb-3"></i>
-              <h5 class="fw-bold">Luxury Rooms</h5>
-              <p>Enjoy our premium rooms with breathtaking views and top-notch amenities.</p>
+        </div>
+      </div>
+
+
+      <div class="main-container-all bg-light">
+
+        <section class="scction1">
+
+          <div class="section-titel ">
+            <h1 class="fw-bold">Offers to inspire you</h1>
+          </div>
+          <div class="section1-main-content">
+            <div class="sction1-content">
+              <img src="./Images/all_img/offer-box-1.jpg" alt="">
+              <div class="sction1-content-text">
+                <h4>Family Escape</h4>
+                <p>Children eat free, exciting fun activities.</p>
+                <button>Read More</button>
+              </div>
+            </div>
+            <div class="sction1-content">
+              <img src="./Images/all_img/offer-box-2 (1).jpg" alt="">
+              <div class="sction1-content-text">
+                <h4>Business Trip</h4>
+                <p>Up to 20% off food and services</p>
+                <button>Read More</button>
+              </div>
+            </div>
+            <div class="sction1-content">
+              <img src="./Images/all_img/offer-box-3.jpg" alt="">
+              <div class="sction1-content-text">
+                <h4>Romance</h4>
+                <p>Discount room rates, reward pointse</p>
+                <button>Read More</button>
+              </div>
             </div>
           </div>
-          <!-- Service 2 -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card border-0 shadow p-4 hover-effect">
-              <i class="bi bi-house fs-1 text-primary mb-3"></i>
-              <h5 class="fw-bold">Spa & Wellness</h5>
-              <p>Rejuvenate with our top-class spa and wellness services designed for relaxation.</p>
+        </section>
+
+
+
+
+        <div class="all-hotel py-5">
+          <div class="hotel-title">
+            <h1 class=" justify-content-center fw-bold py-3">Our Best Rooms</h1>
+          </div>
+
+          <div class="swiffy-slider slider-item-show4 rounded-3 py-5  ">
+            <ul id="service-container" class="slider-container">
+
+
+
+            </ul>
+            <button type="button" class="slider-nav" aria-label="Go left"></button>
+            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+            <div class="slider-indicators">
+              <button class="" aria-label="Go to slide"></button>
+              <button aria-label="Go to slide" class=""></button>
+              <button aria-label="Go to slide" class=""></button>
+              <button aria-label="Go to slide" class=""></button>
+              <button aria-label="Go to slide" class="active"></button>
             </div>
           </div>
-          <!-- Service 3 -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card border-0 shadow p-4 hover-effect">
-              <i class="bi bi-house fs-1 text-primary mb-3"></i>
-              <h5 class="fw-bold">Conference Rooms</h5>
-              <p>Host successful meetings in our well-equipped and spacious conference rooms.</p>
-            </div>
-          </div>
-          <!-- Service 4 -->
-          <div class="col-lg-4 col-md-6 col-sm-12 ">
-            <div class="card border-0 shadow p-4 hover-effect ">
-              <i class="bi bi-house fs-1 text-primary mb-3"></i>
-              <h5 class="fw-bold">Fine Dining</h5>
-              <p>Savor exquisite cuisines at our world-class restaurants with great ambiance.</p>
-            </div>
-          </div>
-          <!-- Service 5 -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card border-0 shadow p-4 hover-effect">
-              <i class="bi bi-house fs-1 text-primary mb-3"></i>
-              <h5 class="fw-bold">Pool & Gym</h5>
-              <p>Stay fit and refreshed with access to our state-of-the-art gym and pools.</p>
-            </div>
-          </div>
-          <!-- Service 6 -->
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card border-0 shadow p-4 hover-effect">
-              <i class="bi bi-house fs-1 text-primary mb-3"></i>
-              <h5 class="fw-bold">24/7 Service</h5>
-              <p>Experience round-the-clock service from our dedicated staff, ready to assist.</p>
+
+        </div>
+
+
+
+
+
+
+
+        <div-title>
+          <h1 class="fw-bold">Our services</h1>
+        </div-title>
+        <div class="swiffy-slider slider-item-show3 text-center ">
+          <ul class="slider-container py-4" id="slider2">
+            <li>
+              <div class="card rounded-3 shadow">
+                <div class="ratio ratio-1x1">
+                  <img src="Images/our_service/1.jpg" class="card-img-top" loading="lazy" alt="...">
+                </div>
+                <div class="card-body d-flex flex-column flex-md-row">
+                  <div class="flex-grow-1">
+                    <strong>Restaurant</strong>
+                    <p class="card-text">Childer ete free exciting fun activities</p>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="card shadow">
+                <div class="ratio ratio-1x1">
+                  <img src="Images/our_service/2.jpg" class="card-img-top" loading="lazy" alt="...">
+                </div>
+                <div class="card-body d-flex flex-column flex-md-row">
+                  <div class="flex-grow-1">
+                    <strong>Spa & Wellness</strong>
+                    <p class="card-text">Discount Rooms Rates, reward points</p>
+                  </div>
+
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="card shadow">
+                <div class="ratio ratio-1x1">
+                  <img src="Images/our_service/3.jpg" class="card-img-top" loading="lazy" alt="...">
+                </div>
+                <div class="card-body d-flex flex-column flex-md-row">
+                  <div class="flex-grow-1">
+                    <strong>Fitness Center</strong>
+                    <p class="card-text">Up to 20% off food and service</p>
+                  </div>
+
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="card shadow">
+                <div class="ratio ratio-1x1">
+                  <img src="Images/our_service/6 (1).jpg"  class="card-img-top" loading="lazy" alt="...">
+                </div>
+                <div class="card-body d-flex flex-column flex-md-row">
+                  <div class="flex-grow-1">
+                    <strong>Restaurant</strong>
+                    <p class="card-text">Childer ete free exciting fun activities</p>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+
+        
+            <li>
+              <div class="card shadow">
+                <div class="ratio ratio-1x1">
+                  <img src="Images/our_service/Fotolia_52888103_Subscription_Monthly_M-640x650.jpg"  class="card-img-top" loading="lazy" alt="...">
+                </div>
+                <div class="card-body d-flex flex-column flex-md-row">
+                  <div class="flex-grow-1">
+                    <strong>Fitness Center</strong>
+                    <p class="card-text">Up to 20% off food and service</p>
+                  </div>
+
+                </div>
+              </div>
+            </li>
+
+
+          </ul>
+
+
+          <button type="button" class="slider-nav" aria-label="Go to previous">
+
+          </button>
+          <button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
+
+        </div>
+
+
+        <div class="bannar-img  my-5 ">
+
+          <div class="card bg-dark text-white text-center">
+            <img class="card-img" src="./Images/banner-03.jpg" alt="Card image">
+            <div class="card-img-overlay p-5 m-5 ">
+              <h5 class="card-title display-4 fw-bold">Booking hotel room</h5>
+              <h1 class="card-text h">-10% for advance booking</h1>
+              <h1 class="card-text ">Use code: BEHOTEL</h1>
+              <button class="btn btn-secondary text-light rounded-5">Booking</button>
             </div>
           </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="section-titel p-0">
+          <h1 class="fw-bold">journey will be more interesting</h1>
+        </div>
+        <div class="bannar-img2 py-3 my-5 col-12 gap-1 d-flex ">
+
+          <div class="card bg-dark text-white col-6">
+            <img class="card-img" src="./Images/bannar_small/journey-box-1.jpg" alt="Card image">
+            <div class="card-img-overlay p-5  ">
+              <h5 class="card-title fs-3 fw-bold">Booking hotel room</h5>
+              <h1 class="card-text fs-4">-10% for advance booking</h1>
+              <h1 class="card-text fs-4">Use code: BEHOTEL</h1>
+              <button class="btn btn-secondary text-light mt-5 rounded-5">View More</button>
+            </div>
+          </div>
+          <div class="card bg-dark text-white col-6">
+            <img class="card-img" src="./Images/bannar_small/journey-box-2.jpg" alt="Card image">
+            <div class="card-img-overlay p-5  ">
+              <h5 class="card-title fs-3 fw-bold">Booking hotel room</h5>
+              <h1 class="card-text fs-4">-10% for advance booking</h1>
+              <h1 class="card-text fs-4">Use code: BEHOTEL</h1>
+              <button class="btn btn-secondary text-light mt-5 rounded-5">View More</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="carosle py-5 my-5">
+          <h1 class="fw-bold py-4">Inspiration, guides, stories</h1>
+
+          <div class="swiffy-slider slider-item-show3">
+            <ul class="slider-container ">
+              <li class="slide-visible">
+                <div class="card shadow ">
+                  <div class="ratio ratio-16x9">
+                    <img src="./Images/inspiration/blog-hotel-01-816x428.jpg" class="card-img-top" loading="lazy" alt="...">
+                  </div>
+                  <div class="card-body p-3 p-xl-5">
+                    <h3 class="card-title h5">See the world</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                      card's content.</p>
+                    <div>
+                      <a href="#" class="btn btn-secondary">Read More</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="slide-visible">
+                <div class="card shadow h-100">
+                  <div class="ratio ratio-16x9">
+                    <img src="./Images/inspiration/blog-hotel-06-816x428.jpg" class="card-img-top" loading="lazy" alt="...">
+                  </div>
+                  <div class="card-body p-3 p-xl-5">
+                    <h3 class="card-title h5">Tranquil locations far away</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                      card's content.</p>
+                    <a href="#" class="btn btn-secondary">Read More</a>
+                  </div>
+                </div>
+              </li>
+              <li class="">
+                <div class="card shadow h-100">
+                  <div class="ratio ratio-16x9">
+                    <img src="./Images/inspiration/blog-hotel-07-816x428.jpg" class="card-img-top" loading="lazy" alt="...">
+                  </div>
+                  <div class="card-body p-3 p-xl-5">
+                    <h3 class="card-title h5">Road trip in the wilderness</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                      card's content.</p>
+                    <a href="#" class="btn btn-secondary">Read More</a>
+                  </div>
+                </div>
+              </li>
+              <li class="">
+                <div class="card shadow h-100">
+                  <div class="ratio ratio-16x9">
+                    <img src="./Images/inspiration/blog-hotel-08-816x428.jpg" class="card-img-top" loading="lazy" alt="...">
+                  </div>
+                  <div class="card-body  p-3 p-xl-5">
+                    <h3 class="card-title h5">To the hidden lake side</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                      card's content.</p>
+                    <a href="#" class="btn btn-secondary">Read More</a>
+                  </div>
+                </div>
+              </li>
+
+              
+
+            </ul>
+
+            <button type="button" class="slider-nav" aria-label="Go left"></button>
+            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+            <div class="slider-indicators">
+              <button class="active" aria-label="Go to slide"></button>
+              <button aria-label="Go to slide" class=""></button>
+              <button aria-label="Go to slide" class=""></button>
+              <button aria-label="Go to slide" class=""></button>
+              <button aria-label="Go to slide" class=""></button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="review py-3">
+
+          <div class="review-title ">
+            <h1 class="fw-bold">Every stay has a story</h1>
+          </div>
+
+          <div class="swiffy-slider slider-item-show2  ">
+            <div class="slider-container">
+
+              <div class="p-5 col-11 p-xl-5 text-light rounded text-black fw-bold" style="background-color:  #e9e9e9;">
+                <p class="mb-2" style="font-size: 1.5rem;">⭐⭐⭐⭐⭐</p>
+                Hoodie iceland literally slow-carb kombucha kickstarter cloud bread irony aesthetic wayfarers prism
+                kinfolk occupy pok pok lo-fi. Letterpress crucifix distillery bespoke austin coloring book photo
+                booth 8-bit.
+                </p>
+                <div class="profile d-flex align-items-center mt-4">
+                  <img src="./Images/man_img.jpg" class="rounded-5 shadow" alt="Profile Image"
+                    style="width: 60px; height: 60px; object-fit: cover;">
+                  <div class="title ms-3">
+                    <h4 class="mb-0">Mohammad Arman</h4>
+                    <h6 class="text-black">Front-end Developer</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 p-xl-5  col-11 text-light rounded text-black fw-bold" style="background-color:  #e9e9e9;">
+                <p class="mb-2" style="font-size: 1.5rem;">⭐⭐⭐⭐⭐</p>
+                <p>
+                  Hoodie iceland literally slow-carb kombucha kickstarter cloud bread irony aesthetic wayfarers prism
+                  kinfolk occupy pok pok lo-fi. Letterpress crucifix distillery bespoke austin coloring book photo
+                  booth 8-bit.
+                </p>
+                <div class="profile d-flex align-items-center mt-4">
+                  <img src="./Images/man_3.jpg" class="rounded-5 shadow" alt="Profile Image"
+                    style="width: 60px; height: 60px; object-fit: cover;">
+                  <div class="title ms-3">
+                    <h4 class="mb-0"> AL Lemon</h4>
+                    <h6 class="text-black">Back-end Developer</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 p-xl-5 col-11 text-light rounded text-black fw-bold" style="background-color:  #e9e9e9;">
+                <p class="mb-2" style="font-size: 1.5rem;">⭐⭐⭐⭐⭐</p>
+                <p>
+                  Hoodie iceland literally slow-carb kombucha kickstarter cloud bread irony aesthetic wayfarers prism
+                  kinfolk occupy pok pok lo-fi. Letterpress crucifix distillery bespoke austin coloring book photo
+                  booth 8-bit.
+                </p>
+                <div class="profile d-flex align-items-center mt-4">
+                  <img src="./Images/man_4.jpg" class="rounded-5 shadow" alt="Profile Image"
+                    style="width: 60px; height: 60px; object-fit: cover;">
+                  <div class="title ms-3">
+                    <h4 class="mb-0">Abu Hanif</h4>
+                    <h6 class="text-black">Trader</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 p-xl-5 col-11 text-light rounded text-black fw-bold" style="background-color:  #e9e9e9;">
+                <p class="mb-2" style="font-size: 1.5rem;">⭐⭐⭐⭐⭐</p>
+                <p>
+                  Hoodie iceland literally slow-carb kombucha kickstarter cloud bread irony aesthetic wayfarers prism
+                  kinfolk occupy pok pok lo-fi. Letterpress crucifix distillery bespoke austin coloring book photo
+                  booth 8-bit.
+                </p>
+                <div class="profile d-flex align-items-center mt-4">
+                  <img src="./Images/man_5.jpg" class="rounded-5 shadow" alt="Profile Image"
+                    style="width: 60px; height: 60px; object-fit: cover;">
+                  <div class="title ms-3">
+                    <h4 class="mb-0">Abdullha Sazib</h4>
+                    <h6 class="text-black">UI Deginer</h6>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3 p-xl-5 col-11  text-light rounded text-black fw-bold" style="background-color:  #e9e9e9;">
+                <p class="mb-2" style="font-size: 2rem;">⭐⭐⭐⭐⭐</p>
+                <p>
+                  Hoodie iceland literally slow-carb kombucha kickstarter cloud bread irony aesthetic wayfarers prism
+                  kinfolk occupy pok pok lo-fi. Letterpress crucifix distillery bespoke austin coloring book photo
+                  booth 8-bit.
+                </p>
+                <div class="profile d-flex align-items-center mt-4">
+                  <img src="./Images/man_6.jpg" class="rounded-5 shadow" alt="Profile Image"
+                    style="width: 60px; height: 60px; object-fit: cover;">
+                  <div class="title ms-3">
+                    <h4 class="mb-0">Safin Hossain</h4>
+                    <h6 class="text-black">Doctor Assistend</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="slider-nav" aria-label="Go left"></button>
+            <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+            <div class="slider-indicators d-md-none">
+              <button class="" aria-label="Go to slide"></button>
+              <button aria-label="Go to slide"></button>
+              <button aria-label="Go to slide"></button>
+              <button aria-label="Go to slide" class=""></button>
+              <button aria-label="Go to slide"></button>
+              <button aria-label="Go to slide" class="active"></button>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+        <div class="section-titel">
+          <h1 class="fw-bold">Share Your Moments</h1>
+        </div>
+        <div class="section1-main-content   d-flex justify-content-center align-items-center">
+          <div class="sction1-content">
+            <img src="./Images/shear_moment/Fotolia_163203222_Subscription_Monthly_M-370x250.jpg" alt="">
+          </div>
+
+          <div class="sction1-content">
+            <img src="./Images/shear_moment/Fotolia_179700361_Subscription_Monthly_M-370x250.jpg" alt="">
+          </div>
+
+          <div class="sction1-content">
+            <img src="./Images/shear_moment/Fotolia_52888103_Subscription_Monthly_M-370x250.jpg" alt="">
+
+          </div>
+
+        </div>
+        </section>
+
+
+
       </div>
-    </div>
     </main>
 
-      
+
     <footer class="footer bg-dark text-light py-4">
       <div class="container">
         <div class="row">
@@ -304,8 +547,10 @@
             <div class="social-icons d-flex gap-3">
               <a href="https://www.facebook.com/mbarmanhossen123" class="text-light"><i class="bi bi-facebook"></i></a>
               <a href="https://x.com/ar43856" class="text-light"><i class="bi bi-twitter"></i></a>
-              <a href="https://www.instagram.com/mohammad404arman/" class="text-light"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/armanps1/" class="text-light" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a href="https://www.instagram.com/mohammad404arman/" class="text-light"><i
+                  class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/armanps1/" class="text-light" target="_blank"><i
+                  class="bi bi-linkedin"></i></a>
             </div>
           </div>
         </div>
@@ -316,7 +561,7 @@
         </div>
       </div>
     </footer>
-    
+
     <script src="./static/js/admin.js"></script>
     <script src="./static/js/app.js"></script>
     <script src="./static/js/auth.js"></script>

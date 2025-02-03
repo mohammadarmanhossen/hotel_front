@@ -108,7 +108,7 @@ const loadDistrictsForForm = () => {
       .catch((error) => {
         console.error("Error fetching districts:", error);
         const districtsDropdown = document.getElementById("districts");
-        districtsDropdown.innerHTML = '<option value="" disabled>Error loading districts</option>';
+        districtsDropdown.innerHTML = '<option value="" disabled>Error loading districts</option>' ;
       });
   };
 

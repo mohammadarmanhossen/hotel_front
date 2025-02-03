@@ -1,8 +1,8 @@
-   /* Hover effect for dropdown links */
-   .dropdown-item:hover {
-    background-color: #ffc107 !important;
-    color: #fff !important;
-  }
+
+.navbar-nav .nav-link:hover {
+  color: rgb(233, 106, 2) !important; 
+  transition: color 0.3s ease-in-out; 
+}
 
   /* Adjusting alignment and spacing for profile dropdown */
   .dropdown-menu {

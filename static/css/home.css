@@ -1,11 +1,90 @@
 
-.nav-item a:hover{
-    background: #a9abac;
+
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+ }
+
+
+ .navbar-nav .nav-link:hover {
+  color: rgb(233, 106, 2) !important; 
+  transition: color 0.3s ease-in-out; 
+}
+
+.navbar-brand:hover .logo {
+  color: red !important; /* Text color changes on hover */
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar {
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler {
+  border: none; /* Removes default border */
+}
+
+.navbar-toggler-icon {
+  background-color: black; /* Ensures visibility */
+}
+
+
+.main-container-all{
+  padding-inline: 15%;
+  padding-block: 50px;
+  margin-top: 20px;
+}
+
+.sction1-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+}
+.sction1-content img{
+  width: 100%;
+  border-radius: 15px;
+}
+.sction1-content-text{
+  font-weight: 600;
+  text-align: center;
+}
+.sction1-content-text h4{
+  font-size: 21px;
+  font-weight: 700;
+}
+.sction1-content-text p {
+  font-size: 18px;
+  color: #999;
+  font-weight: 500;
+}
+.sction1-content-text button {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: none !important;
+  font-weight: 400;
+  color: rgb(179, 138, 5);
+}
+
+
+.section1-main-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-block: 40px;
 }
 
 .main-container {
-    background-color: #f8f9fa; /* Light background */
-    padding: 50px 20px;
+    background-color: #bbbfc2; /* Light background */
+    padding: 10px 5px;
+    align-items: center;
   }
   .container2 h2 {
     color: #343a40; /* Dark text */
@@ -13,9 +92,11 @@
   .container2 p {
     color: #6c757d; /* Secondary text */
   }
+
+
   .card {
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
   }
   .card:hover {
@@ -23,20 +104,28 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
  
-
+  .card-img{
+    width: 100%;
+  }
 
   .c-item{
-    height: 550px;
+    height: 670px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   .c-img{
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.6);
+    filter: brightness(0.8);
   }
  
+.carousel-caption{
 
-
-
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 /* Apply Cinzel to headings in the carousel */
 .carousel-caption h1, .carousel-caption h4, .carousel-caption h5 {
     font-family: 'Cinzel', serif;
@@ -48,89 +137,76 @@
   }
 
 
+/* .for_slider_btn{
+  position: absolute;
+  top: -5%;
+  right: 0;
+  transform: scale(0.7);
+}
+ */
 
 
-  /* General Container Styling */
-.search-container {
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 900px; /* Restrict max width */
-    margin: 0 auto; /* Center align */
-    background-color: #979da3; /* Light gray */
-  }
-  
-  /* Dropdown, Input, and Button Styling */
-  .search-container select,
-  .search-container input,
-  .search-container button {
-    border-radius: 5px;
-    font-size: 1rem;
-    padding: 10px;
-  }
-  
-  .search-container select {
-    background-color: #fff;
-    border: 1px solid #ddd;
-  }
-  
-  .search-container input {
-    border: 1px solid #ddd;
-  }
-  
-  .search-container button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .search-container button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    /* Stack elements vertically on smaller screens */
-    .search-container {
-      padding: 20px;
-    }
 
-  
-    .search-container .d-flex {
-      flex-direction: column; /* Stack elements */
-      gap: 10px; /* Add spacing between elements */
-    }
-  
-    .search-container select,
-    .search-container input,
-    .search-container button {
-      width: 100%; /* Full width */
-    }
-    .hotel-titel {
-      align-items: center;
-      text-align: center;
-      justify-content: center;
-      
-    }
 
-  }
-  
-  @media (min-width: 769px) {
-    .search-container {
-      padding: 10px 20px;
-    }
 
-  
-    .search-container select,
-    .search-container input {
-      width: auto; /* Allow elements to fit their content */
-    }
-  
-    .search-container button {
-      width: auto;
-    }
+.hotel-card {
 
-  }
-  
+  border-radius: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.hotel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.hotel-img-container {
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.hotel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hotel-title {
+  font-size: 1.5rem;
+}
+.hotel-price {
+  font-size: 1.3rem;
+}
+.hotel-description {
+  font-size: 0.95rem;
+}
+.hotel-card .card-footer {
+  border-top: none;
+}
 
+
+
+
+.ratio-1x1 img {
+  object-fit: cover;  /* Make the image cover the area */
+  width: 100%;  /* Ensure the image takes up the full width */
+  height: 100%;  /* Ensure the image takes up the full height */
+}
+
+
+
+
+.bannar-img {
+  border-radius: 15px;
+  height: 500px;  /* Set the height of the banner */
+  overflow: hidden;  /* Hide any overflow content */
+}
+
+.bannar-img .card-img {
+  width: 100%;  /* Ensure the image fills the width */
+  height: 100%;  /* Ensure the image fills the height */
+  object-fit: cover;  /* Ensure the image covers the area without distortion */
+}
+
+.card-img-overlay {
+  padding: 1rem; /* Reduce padding to fit better in a smaller banner */
+  margin: 1rem;  /* Reduce margin if necessary */
+}

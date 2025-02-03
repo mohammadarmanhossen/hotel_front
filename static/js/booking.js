@@ -62,12 +62,25 @@ fetch("https://hotel-backend-cmcn.onrender.com/bookeds/", {
   })
   .then((data) => {
     console.log(data);
-    alert("Succesfully Booking Hotel")
+    
+    Swal.fire({
+      title: 'Success!',
+      text: 'Hotel Booking Successfully.',
+      icon: 'success',
+      confirmButtonText: 'Great!',
+    })
   });
 }
 else{
-  alert("place login")
-  window.location.href = "login.html";
+  Swal.fire({
+  title: 'Error!',
+  text: 'Login Your Account',
+  icon: 'error',
+  confirmButtonText: 'Cool'
+
+  }).then(()=>{
+     window.location.href="login.html";
+  })
 }
 };
 
@@ -87,8 +100,12 @@ const hotelReview=(event)=>{
       rating,
     }
     console.log(reviewData);
-    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-    successModal.show();
+    Swal.fire({
+      title: 'Success!',
+      text: 'Hotel Review Successfully.',
+      icon: 'success',
+      confirmButtonText: 'Great!',
+    })
     fetch("https://hotel-backend-cmcn.onrender.com/reviews/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -99,12 +116,19 @@ const hotelReview=(event)=>{
         throw new Error("Failed to book the hotel");
       })
       .then((data) => {
-        console.log("Booking successful:", data);
+       console.log(data);
       })
     }
     else{
-      alert("Place Login Your Account")
-      window.location.href = "login.html";
+      swal.fire({
+        title: 'Error!',
+        text: 'Please Login Your Account',
+        icon: 'error',
+        confirmButtonText: 'Okay',
+        
+      }).then(()=>{
+        window.location.href = "login.html";
+      })
     }
   
 }
