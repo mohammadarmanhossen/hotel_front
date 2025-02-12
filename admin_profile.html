@@ -20,14 +20,10 @@
   </head>
   <body>
     <header>
-        <!-- Navbar -->
-  
-
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-dark ">
           <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
-              <img id="hotel_img p-5" class="rounded" src="Images/Drame.webp" alt="Logo" style="height: 40px;">
+              <img id="hotel_img" class="rounded" src="Images/Drame.webp" alt="Logo" style="height: 40px;">
               <h1 class="logo fs-3 fw-bold ms-2 mb-0 text-dark">VILLAGIO</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -36,45 +32,57 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
                 <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Admin Profile</button>
-                    <ul class="dropdown-menu text-center">  
-                      <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="admin_panel.html">Admin</a><button class="dropdown-item" type="button"></button></li>
-                      <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="home.html">Logout</a><button class="dropdown-item" type="button"></button></li>
-                    </ul>
+                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Admin Profile</button>
+                  <ul class="dropdown-menu text-center">
+                    <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="admin_panel.html">Admin</a></li>
+                    <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="home.html">Logout</a></li>
+                  </ul>
                 </div>
               </ul>
             </div>
           </div>
         </nav>
-    
-
-      <main>
-        <div class="container-fluid d-flex justify-content-center align-items-center bg-light vh-100">
+        
+        <main>
+          <div class="container-fluid d-flex justify-content-center align-items-center bg-light vh-100">
             <div class="account p-5">
-                <div class="card text-center" style="width: 30rem; color: rgb(143, 153, 143);">
-                    <img src="/Images/Drame.webp" class="card-img-top bg-warning rounded-circle mx-auto mt-3 " alt="Profile Picture" style="width: 100px; height: 100px;;">
-                    <div class="card-body">
-                        <h5 id="username" class="card-title">Username:admin</h5>
-                        <h5 id="first_name" class="card-title">Name:Admin</h5>
-                        <p id="email" class="card-text">Email:admin@gmail.com</p>
-                        <a href="#" class="btn btn-primary w-100">Edit Profile</a>
-                    </div>
+              <div class="card text-center" style="width: 30rem; color: rgb(143, 153, 143);">
+                <img src="/Images/Drame.webp" class="card-img-top bg-warning rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
+                <div class="card-body">
+                  <h5 id="username" class="card-title">Username: admin</h5>
+                  <h5 id="first_name" class="card-title">Name: Admin</h5>
+                  <p id="email" class="card-text">Email: admin@gmail.com</p>
+                  <a href="#" class="btn btn-primary w-100 mt-3">Edit Profile</a>
                 </div>
+              </div>
             </div>
-        </div>
-    </main>
+          </div>
+        </main>
+        
+
+        <style>
+          .card-img-top {
+            margin-bottom: 15px; 
+          }
+          .card-title, .card-text {
+            color: #333; 
+          }
+          .btn-primary:hover {
+            background-color: #004085; 
+          }
+        </style>
+        
     
 
     <footer class="footer bg-dark text-light py-4">
       <div class="container">
         <div class="row">
-          <!-- Logo and About Section -->
+   
           <div class="col-md-4">
             <h3 class="text-uppercase">Hotel</h3>
             <p>Experience luxury and comfort at our hotels. Book your stay with us for an unforgettable experience.</p>
           </div>
-          <!-- Quick Links -->
+   
           <div class="col-md-4">
             <h5 class="text-uppercase">Quick Links</h5>
             <ul class="list-unstyled">
@@ -85,7 +93,7 @@
               <li><a href="login.html" class="text-light text-decoration-none">Login</a></li>
             </ul>
           </div>
-          <!-- Contact Info -->
+
           <div class="col-md-4">
             <h5 class="text-uppercase">Contact Us</h5>
             <p><i class="bi bi-geo-alt"></i> 123 Luxury Street, Dream City</p>

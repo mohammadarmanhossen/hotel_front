@@ -1,12 +1,18 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
  *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Poppins", serif;
  }
 
+ main{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+ }
 
  .navbar-nav .nav-link:hover {
   color: rgb(233, 106, 2) !important; 
@@ -14,7 +20,7 @@
 }
 
 .navbar-brand:hover .logo {
-  color: red !important; /* Text color changes on hover */
+  color: red !important; 
   transition: color 0.3s ease-in-out;
 }
 
@@ -23,11 +29,11 @@
 }
 
 .navbar-toggler {
-  border: none; /* Removes default border */
+  border: none;
 }
 
 .navbar-toggler-icon {
-  background-color: black; /* Ensures visibility */
+  background-color: black;
 }
 
 
@@ -36,6 +42,13 @@
   padding-block: 50px;
   margin-top: 20px;
 }
+@media screen and (max-width: 768px) {
+  
+.main-container-all{
+  padding-inline: 5%;
+ 
+}
+}
 
 .sction1-content{
   width: 100%;
@@ -43,7 +56,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  border-radius: 8px;
 
 }
 .sction1-content img{
@@ -73,37 +86,18 @@
 }
 
 
-.section1-main-content{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  margin-block: 40px;
-}
 
-.main-container {
-    background-color: #bbbfc2; /* Light background */
-    padding: 10px 5px;
-    align-items: center;
-  }
+
   .container2 h2 {
-    color: #343a40; /* Dark text */
+    color: #d2d7dd; 
   }
   .container2 p {
-    color: #6c757d; /* Secondary text */
+    color: #e2dfdf; 
   }
 
 
-  .card {
-    border: none;
-    border-radius: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
- 
+
+
   .card-img{
     width: 100%;
   }
@@ -126,44 +120,18 @@
   justify-content: center;
   text-align: center;
 }
-/* Apply Cinzel to headings in the carousel */
+
 .carousel-caption h1, .carousel-caption h4, .carousel-caption h5 {
     font-family: 'Cinzel', serif;
   }
   
-  /* Apply Source Sans Pro to paragraphs and links in the carousel */
+
   .carousel-caption p, .carousel-caption a {
     font-family: 'Raleway', sans-serif;
   }
 
 
-/* .for_slider_btn{
-  position: absolute;
-  top: -5%;
-  right: 0;
-  transform: scale(0.7);
-}
- */
 
-
-
-
-
-.hotel-card {
-
-  border-radius: 15px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.hotel-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-.hotel-img-container {
-  height: 200px;
-  overflow: hidden;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
 .hotel-img {
   width: 100%;
   height: 100%;
@@ -178,35 +146,26 @@
 .hotel-description {
   font-size: 0.95rem;
 }
-.hotel-card .card-footer {
-  border-top: none;
-}
-
-
-
 
 .ratio-1x1 img {
-  object-fit: cover;  /* Make the image cover the area */
-  width: 100%;  /* Ensure the image takes up the full width */
-  height: 100%;  /* Ensure the image takes up the full height */
+  object-fit: cover; 
+  width: 100%; 
+  height: 100%; 
 }
-
-
-
 
 .bannar-img {
   border-radius: 15px;
-  height: 500px;  /* Set the height of the banner */
-  overflow: hidden;  /* Hide any overflow content */
+  height: 500px;  
+  overflow: hidden;  
 }
 
 .bannar-img .card-img {
-  width: 100%;  /* Ensure the image fills the width */
-  height: 100%;  /* Ensure the image fills the height */
-  object-fit: cover;  /* Ensure the image covers the area without distortion */
+  width: 100%;  
+  height: 100%; 
+  object-fit: cover; 
 }
 
 .card-img-overlay {
-  padding: 1rem; /* Reduce padding to fit better in a smaller banner */
-  margin: 1rem;  /* Reduce margin if necessary */
+  padding: 1rem;
+  margin: 1rem;  
 }

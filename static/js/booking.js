@@ -1,7 +1,7 @@
 
 
 const hotel=()=>{
-  fetch("https://hotel-backend-cmcn.onrender.com/hotels/")
+  fetch("https://hotel-backend-3ybx.vercel.app/hotels/")
   .then((res)=>res.json())
   .then((data)=>console.log(data))
 
@@ -33,25 +33,26 @@ const hotel_name = getValue("Hotel_booked").value;
 const room = getValue("Room").value;
 const in_date = getValue("start_date").value;
 const out_date = getValue("end_date").value;
-const payment = getValue("payment_method").value;
+const total_amounts=getValue("total_amount")
 
 const info = {
   hotel_name,
   room,
   in_date,
   out_date,
-  payment,
+  total_amounts,
+  // payment,
 };
 console.log(info);
 
 // Validate form fields before submitting
-if (!hotel_name || !room || !in_date || !out_date || !payment) {
+if (!hotel_name || !room || !in_date || !out_date || !total_amounts) {
   alert("Please fill in all required fields.");
   return;
 }
 
 // Submit data to the API
-fetch("https://hotel-backend-cmcn.onrender.com/bookeds/", {
+fetch("https://hotel-backend-3ybx.vercel.app/bookeds/", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(info),
@@ -106,7 +107,7 @@ const hotelReview=(event)=>{
       icon: 'success',
       confirmButtonText: 'Great!',
     })
-    fetch("https://hotel-backend-cmcn.onrender.com/reviews/", {
+    fetch("https://hotel-backend-3ybx.vercel.app/reviews/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reviewData),

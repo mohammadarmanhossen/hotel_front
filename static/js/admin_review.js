@@ -1,7 +1,8 @@
 const loadReview= () => {
-    fetch("https://hotel-backend-cmcn.onrender.com/reviews/")
+    fetch("https://hotel-backend-3ybx.vercel.app/reviews/")
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         const tableBody = document.getElementById("reviewTableBody");
         tableBody.innerHTML = ""; // Clear any existing rows
         
@@ -26,7 +27,7 @@ const loadReview= () => {
 
   // Call the function when the page loads
 loadAllUser();
-loadAllHotel();
-loadAllDistirct();
 loadReview()
-loadDistrictsForForm();
+
+
+

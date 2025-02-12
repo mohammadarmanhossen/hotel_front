@@ -1,5 +1,4 @@
 
-
 const handleRegistration = (event) => {
     event.preventDefault();
     const username = getValue("username").value;
@@ -26,7 +25,7 @@ const handleRegistration = (event) => {
       )
        {
   
-        fetch("https://hotel-backend-cmcn.onrender.com/client/register/", {
+        fetch("https://hotel-backend-3ybx.vercel.app/client/register/", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(info),
@@ -42,8 +41,6 @@ const handleRegistration = (event) => {
             }).then(()=>{
                window.location.href="login.html";
             })
-
-
           });
           
       }
@@ -60,25 +57,22 @@ const handleRegistration = (event) => {
 
 
 
-
  const handleLogin=(event)=>{
     event.preventDefault(event)
     const username=getValue("login-username").value;
     const password=getValue("login-password").value;
     const admin_user = "arman";
     const admin_pass = "123";
-   
-
-  // Hardcoded credential check for admin
+    
   if (username === admin_user && password === admin_pass) {
-    window.location.href = "admin_panel.html";
+    window.location.href = "admin_user.html";
     return;
   }
   else{
     console.log(username,password);
     
     if((username,password)){
-      fetch("https://hotel-backend-cmcn.onrender.com/client/login/",{
+      fetch("https://hotel-backend-3ybx.vercel.app/client/login/",{
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ username, password }),
@@ -113,7 +107,7 @@ const handleRegistration = (event) => {
   }
   const getValue = (id) => {
     const value=document.getElementById(id);
-    return value; // Trim to remove extra spaces
+    return value; 
   };
 
 
@@ -133,7 +127,7 @@ const handleLogout = (event) => {
     console.log("Logging out...");
     const token = localStorage.getItem("token");
     console.log(token);
-    fetch("https://hotel-backend-cmcn.onrender.com/client/logout/", {
+    fetch("https://hotel-backend-3ybx.vercel.app/client/logout/", {
       method: "GET",
       headers: {
         Authorization: `Token ${token}`,
@@ -161,10 +155,6 @@ const handleLogout = (event) => {
   };
   
   
-
-
-
-
 
 
 

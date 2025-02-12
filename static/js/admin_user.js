@@ -1,5 +1,5 @@
 const loadAllUser = () => {
-    fetch("https://hotel-backend-cmcn.onrender.com/client/users/")
+    fetch("https://hotel-backend-3ybx.vercel.app/client/users/")
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("userTableBody");

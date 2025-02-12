@@ -1,10 +1,10 @@
 
 const loadAllHotel = () => {
-    fetch("https://hotel-backend-cmcn.onrender.com/hotels/")
+    fetch("https://hotel-backend-3ybx.vercel.app/hotels/")
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("hotelTableBody");
-        tableBody.innerHTML = ""; // Clear the table body before adding rows
+        tableBody.innerHTML = ""; 
   
         data.forEach((hotel, index) => {
           const row = document.createElement("tr");
@@ -24,7 +24,7 @@ const loadAllHotel = () => {
           tableBody.appendChild(row);
         });
   
-        // Attach delete functionality to buttons
+
         const deleteButtons = document.querySelectorAll(".btn-danger");
         deleteButtons.forEach((button) => {
           button.addEventListener("click", (event) => {
@@ -38,7 +38,7 @@ const loadAllHotel = () => {
       });
   };
   
-  // Load hotels when the page is ready
+
   document.addEventListener("DOMContentLoaded", loadAllHotel);
   
   const handleHotel = (event) => {
@@ -49,9 +49,9 @@ const loadAllHotel = () => {
     const district = document.getElementById("districts").value;
     const description = document.getElementById("description-name").value;
     const price = document.getElementById("price-night-name").value;
-    const image = document.getElementById("image").files[0]; // Get the file
+    const image = document.getElementById("image").files[0]; 
   
-    // Use FormData to handle the file upload
+
     const formData = new FormData();
     formData.append("hotel_name", name);
     formData.append("address", address);
@@ -63,9 +63,9 @@ const loadAllHotel = () => {
   
     console.log(formData);
   
-    fetch("https://hotel-backend-cmcn.onrender.com/hotels/",{
+    fetch("https://hotel-backend-3ybx.vercel.app/hotels/",{
       method: "POST",
-      body: formData, // Send FormData directly
+      body: formData, 
     })
       .then((res) => res.json())
       .then((data) => {
@@ -81,10 +81,9 @@ const loadAllHotel = () => {
 
 
 
-  // post hotel load distict
 
 const loadDistrictsForForm = () => {
-    fetch("https://hotel-backend-cmcn.onrender.com/district/")
+    fetch("https://hotel-backend-3ybx.vercel.app/district/")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to fetch districts: ${res.statusText}`);
@@ -94,14 +93,14 @@ const loadDistrictsForForm = () => {
       .then((data) => {
         const districtsDropdown = document.getElementById("districts");
   
-        // Clear existing options except the default one
+
         districtsDropdown.innerHTML = '<option value="" disabled selected>Select District</option>';
   
-        // Populate districts
+      
         data.forEach((item) => {
           const option = document.createElement("option");
-          option.value = item.district_name; // Use district name as value
-          option.textContent = item.district_name; // Display district name
+          option.value = item.district_name;
+          option.textContent = item.district_name; 
           districtsDropdown.appendChild(option);
         });
       })
@@ -112,7 +111,7 @@ const loadDistrictsForForm = () => {
       });
   };
 
-  // Call the function when the page loads
+
 loadAllUser();
 loadAllHotel();
 loadAllDistirct();

@@ -12,62 +12,46 @@
   </head>
   <body>
     <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-light">
-          <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-              <img id="hotel_img p-5" class="rounded" src="Images/Drame.webp" alt="Logo" style="height: 40px;">
-              <h1 class="logo fs-3 fw-bold ms-2 mb-0 text-dark">VILLAGIO</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-              <span class="navbar-toggler-icon bg-dark"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Admin</button>
-                    <ul class="dropdown-menu text-center">
-  
-                      <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="my_account.html">Profile</a><button class="dropdown-item" type="button"></button></li>
-                      <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="admin_panel.html">Admin panel</a><button class="dropdown-item" type="button"></button></li>
-                      <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="home.html">Logout</a><button class="dropdown-item" type="button"></button></li>
-          
-                    </ul>
-                </div>
-              </ul>
-            </div>
-          </div>
-        </nav>
+
+
 
       <main>
-        <!-- Navigation Bar -->
-        <div class="bar d-flex">
-        <div class="menu-container col-6 p-3 d-flex justify-content-center  bg-info text-white ">
-          <li class="menu nav-item">
-            <a class="nav-link text-white fw-bold" href="admin_user.html">Users</a>
-          </li>
-          <li class="menu nav-item">
-            <a class="nav-link text-white fw-bold" href="admin_hotel.html">Hotels</a>
-          </li>
-          <li class="menu nav-item">
-            <a class="nav-link text-white fw-bold" href="admin_contact.html">Contacts</a>
-          </li>
-          <li class="menu nav-item">
-            <a class="nav-link text-white fw-bold" href="admin_review.html">Reviews</a>
-          </li>
-          <li class="menu nav-item">
-            <a class="nav-link text-white fw-bold" href="admin_district.html">Districts</a>
-          </li>
+        <div class="bar d-flex bg-black">
+          <div class="titel  col-4  px-5 p-2">
+            <h2 class="text-light mb-4">
+              <a href="admin_panel.html" class="text-light text-decoration-none">Admin</a>
+            </h2>            
+          </div>
+          <div class="titel  col-4  px-5 p-2">
+            <h2 class="text-center  text-light mb-4">Contact Management</h2>
+          </div>
+          <div class="titel col-4  px-5 p-2">
+  
+            <div class="ms-auto text-end">
+              <button class="btn btn-secondary" type="button">
+                <a class="fw-bold fs-4 text-light text-decoration-none" href="home.html">Logout</a>
+                </button>
+            </div>
+          </div>
         </div>
-        <div class="titel bg-warning col-6 px-5 p-2">
-          <h1 class="text-center  text-dark mb-4">User Management</h1>
+  
+      <div class="col-12 d-flex">
+    
+
+        <div class="sidebar col-2 bg-secondary text-light p-4">
+   
+          <a href="admin_user.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📌Users</a>
+          <a href="admin_hotel.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">🏨 Hotels</a>
+          <a href="admin_contact.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📞 Contacts</a>
+          <a href="admin_review.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">⭐ Reviews</a>
+          <a href="admin_district.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📍 Districts</a>
         </div>
-      </div>
-        <!-- User Management Section -->
+  
+        <div class="col-10 bg-light  rounded shadow">
       <div class="contact vh-100 bg-light">
 
         <h1 class=" text-center p-5 mx-auto">This is contact page </h1>
+      </div>
       </div>
        
       </main>

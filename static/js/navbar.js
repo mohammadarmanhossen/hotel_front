@@ -17,7 +17,7 @@ const navbarLoad=()=>{
         <img src="/Images/man_img.jpg" alt="Account" class="rounded-circle" width="40px" height="40"/>
       </button>
       <ul class="dropdown-menu text-center ">
-  <li class="p-2">
+      <li class="p-2">
     <a
       class="fw-bold text-decoration-none bg-light text-black d-block m-auto p-2 rounded"
       href="user_dashboard.html"

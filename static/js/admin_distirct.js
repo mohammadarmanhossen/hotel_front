@@ -1,5 +1,5 @@
 const loadAllDistirct= () => {
-    fetch("https://hotel-backend-cmcn.onrender.com/district/")
+    fetch("https://hotel-backend-3ybx.vercel.app/district/")
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("districtTableBody");

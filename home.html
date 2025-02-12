@@ -19,6 +19,13 @@
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.15.10/dist/sweetalert2.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@100..800&display=swap"
+    rel="stylesheet">
+
 </head>
 
 </head>
@@ -40,7 +47,7 @@
           <span class="navbar-toggler-icon bg-dark"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center" id="navbarElement">
+          <ul class="navbar-nav ms-auto align-items-center " id="navbarElement">
 
 
 
@@ -49,7 +56,6 @@
       </div>
     </nav>
 
-
     <main>
 
       <div id="carouselExampleCaptions" class="carousel slide">
@@ -57,83 +63,85 @@
           <div class="carousel-item active c-item">
             <img src="Images/banner-02.jpg" class="d-block w-100 c-img" alt="...">
             <div
-              class="carousel-caption d-flex flex-column align-items-center text-center justify-content-center top-0 mt-5 pt-5 d-none d-md-block">
-              <h1 class="fw-bold display-6 mt-5 pt-5 px-4 r text-white rounded-3">Experience the epitome of luxury</h1>
-              <p class="mt-4 fs-4 px-3 py-2text-white rounded">Escape to nestled in the majestic mountains. Wake up to
+              class="carousel-caption d-flex flex-column align-items-center text-center justify-content-center top-0 md-mt-5 md-pt-5 ">
+              <h1 class="fw-bold display-6 mt-5 pt-5 px-4 text-white rounded-3" style="font-family: 'Roboto';">
+                Experience the epitome of luxury
+              </h1>
+              <p class="mt-4 fs-4 px-3 py-2 text-white rounded">Escape to nestled in the majestic mountains. Wake up to
                 panoramic views and crisp.</p>
 
-              <div
-                class="main-container  text-center align-items-center justify-content-center bg-scendry rounded-3 pt-4 p-4">
-                <div
-                  class="search-container d-flex flex-md-row align-items-center justify-content-center w-75bg-light ">
-                  <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3 w-100">
-                    <select id="district" class="form-select w-md-auto  border-0" required>
-                      <option value="ssl">All District</option>
-                    </select>
-                    <input type="text" placeholder="Search Hotel Name" id="search"
-                      class="form-control w-md-auto p-2 border-0">
-                    <button type="button" onclick="handleSearch()"
-                      class="btn btn-secondary w-100 w-md-auto p-2 border-0">
-                      Search
-                    </button>
-                  </div>
+              <div class="search-container d-flex flex-md-row align-items-center justify-content-center w-100 col-md-4">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center p-3 bg-light rounded-3 gap-3 w-75">
+                  <select id="district" class="form-select w-md-auto  border-0" required>
+                    <option value="ssl">All District</option>
+                  </select>
+                  <input type="text" placeholder="Search Hotel Name" id="search"
+                    class="form-control w-md-auto  border-0">
+                  <button type="button" onclick="loadServices()"
+                    class="btn btn-secondary  w-md-auto   border-4 rounded-5">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
                 </div>
               </div>
-
             </div>
           </div>
-
         </div>
       </div>
 
 
+
       <div class="main-container-all bg-light">
 
-        <section class="scction1">
-
-          <div class="section-titel ">
+        <section class="section1">
+          <div class="section-title">
             <h1 class="fw-bold">Offers to inspire you</h1>
           </div>
-          <div class="section1-main-content">
-            <div class="sction1-content">
-              <img src="./Images/all_img/offer-box-1.jpg" alt="">
-              <div class="sction1-content-text">
-                <h4>Family Escape</h4>
-                <p>Children eat free, exciting fun activities.</p>
-                <button>Read More</button>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="section1-content">
+                  <img src="./Images/all_img/offer-box-1.jpg" alt="Family Escape" class="img-fluid">
+                  <div class="section1-content-text">
+                    <h4>Family Escape</h4>
+                    <p>Children eat free, exciting fun activities.</p>
+                    <button class="btn btn-secondary">Read More</button>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="sction1-content">
-              <img src="./Images/all_img/offer-box-2 (1).jpg" alt="">
-              <div class="sction1-content-text">
-                <h4>Business Trip</h4>
-                <p>Up to 20% off food and services</p>
-                <button>Read More</button>
+
+              <div class="col-12 col-sm-6 col-md-4 mb-4">
+                <div class="section1-content">
+                  <img src="./Images/all_img/offer-box-2 (1).jpg" alt="Business Trip" class="img-fluid">
+                  <div class="section1-content-text">
+                    <h4>Business Trip</h4>
+                    <p>Up to 20% off food and services</p>
+                    <button class="btn btn-secondary">Read More</button>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="sction1-content">
-              <img src="./Images/all_img/offer-box-3.jpg" alt="">
-              <div class="sction1-content-text">
-                <h4>Romance</h4>
-                <p>Discount room rates, reward pointse</p>
-                <button>Read More</button>
+
+              <div class="col-12 col-sm-6 col-md-4 mb-4 ">
+                <div class="section1-content">
+                  <img src="./Images/all_img/offer-box-3.jpg" alt="Romance" class="img-fluid">
+                  <div class="section1-content-text">
+                    <h4>Romance</h4>
+                    <p>Discount room rates, reward points</p>
+                    <button class="btn btn-secondary">Read More</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
 
-
-
         <div class="all-hotel py-5">
           <div class="hotel-title">
             <h1 class=" justify-content-center fw-bold py-3">Our Best Rooms</h1>
           </div>
-
-          <div class="swiffy-slider slider-item-show4 rounded-3 py-5  ">
+          <div class="swiffy-slider slider-item-show3  py-5 ">
             <ul id="service-container" class="slider-container">
-
-
 
             </ul>
             <button type="button" class="slider-nav" aria-label="Go left"></button>
@@ -146,22 +154,17 @@
               <button aria-label="Go to slide" class="active"></button>
             </div>
           </div>
-
         </div>
 
 
 
-
-
-
-
-        <div-title>
+        <div class="title">
           <h1 class="fw-bold">Our services</h1>
-        </div-title>
+        </div>
         <div class="swiffy-slider slider-item-show3 text-center ">
           <ul class="slider-container py-4" id="slider2">
             <li>
-              <div class="card rounded-3 shadow">
+              <div class="card rounded-3 ">
                 <div class="ratio ratio-1x1">
                   <img src="Images/our_service/1.jpg" class="card-img-top" loading="lazy" alt="...">
                 </div>
@@ -176,7 +179,7 @@
             </li>
 
             <li>
-              <div class="card shadow">
+              <div class="card ">
                 <div class="ratio ratio-1x1">
                   <img src="Images/our_service/2.jpg" class="card-img-top" loading="lazy" alt="...">
                 </div>
@@ -190,7 +193,7 @@
               </div>
             </li>
             <li>
-              <div class="card shadow">
+              <div class="card ">
                 <div class="ratio ratio-1x1">
                   <img src="Images/our_service/3.jpg" class="card-img-top" loading="lazy" alt="...">
                 </div>
@@ -205,9 +208,9 @@
             </li>
 
             <li>
-              <div class="card shadow">
+              <div class="card ">
                 <div class="ratio ratio-1x1">
-                  <img src="Images/our_service/6 (1).jpg"  class="card-img-top" loading="lazy" alt="...">
+                  <img src="Images/our_service/6 (1).jpg" class="card-img-top" loading="lazy" alt="...">
                 </div>
                 <div class="card-body d-flex flex-column flex-md-row">
                   <div class="flex-grow-1">
@@ -219,11 +222,11 @@
               </div>
             </li>
 
-        
             <li>
-              <div class="card shadow">
+              <div class="card ">
                 <div class="ratio ratio-1x1">
-                  <img src="Images/our_service/Fotolia_52888103_Subscription_Monthly_M-640x650.jpg"  class="card-img-top" loading="lazy" alt="...">
+                  <img src="Images/images (1).jpg" class="card-img-top"
+                    loading="lazy" alt="...">
                 </div>
                 <div class="card-body d-flex flex-column flex-md-row">
                   <div class="flex-grow-1">
@@ -234,68 +237,62 @@
                 </div>
               </div>
             </li>
-
-
           </ul>
-
-
           <button type="button" class="slider-nav" aria-label="Go to previous">
-
           </button>
           <button type="button" class="slider-nav slider-nav-next" aria-label="Go to next"></button>
-
         </div>
 
 
-        <div class="bannar-img  my-5 ">
-
+        <div class="banner-img my-5 pt-5">
           <div class="card bg-dark text-white text-center">
-            <img class="card-img" src="./Images/banner-03.jpg" alt="Card image">
-            <div class="card-img-overlay p-5 m-5 ">
+            <img class="card-img img-fluid" src="./Images/banner-02.jpg" alt="Card image">
+            <div class="card-img-overlay p-3 p-md-5">
               <h5 class="card-title display-4 fw-bold">Booking hotel room</h5>
-              <h1 class="card-text h">-10% for advance booking</h1>
-              <h1 class="card-text ">Use code: BEHOTEL</h1>
+              <h1 class="card-text h3 h-md-1">-10% for advance booking</h1>
+              <h1 class="card-text h5 h-md-1">Use code: BEHOTEL</h1>
               <button class="btn btn-secondary text-light rounded-5">Booking</button>
             </div>
           </div>
         </div>
 
 
-
-
-
-
-
-
-
-
-        <div class="section-titel p-0">
-          <h1 class="fw-bold">journey will be more interesting</h1>
-        </div>
-        <div class="bannar-img2 py-3 my-5 col-12 gap-1 d-flex ">
-
-          <div class="card bg-dark text-white col-6">
-            <img class="card-img" src="./Images/bannar_small/journey-box-1.jpg" alt="Card image">
-            <div class="card-img-overlay p-5  ">
-              <h5 class="card-title fs-3 fw-bold">Booking hotel room</h5>
-              <h1 class="card-text fs-4">-10% for advance booking</h1>
-              <h1 class="card-text fs-4">Use code: BEHOTEL</h1>
-              <button class="btn btn-secondary text-light mt-5 rounded-5">View More</button>
+        <div class="banner-img-3 pt-5">
+          <div class="section-title p-0">
+            <h1 class="fw-bold">Journey will be more interesting</h1>
+          </div>
+          
+          <div class="bannar-img2 py-3 my-5 row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="card bg-dark text-white">
+                <img class="card-img img-fluid" src="./Images/bannar_small/journey-box-1.jpg" alt="Card image">
+                <div class="card-img-overlay p-4">
+                  <h5 class="card-title fs-3 fw-bold">Booking hotel room</h5>
+                  <h1 class="card-text fs-4">-10% for advance booking</h1>
+                  <h1 class="card-text fs-4">Use code: BEHOTEL</h1>
+                  <button class="btn btn-secondary text-light mt-4 rounded-5">View More</button>
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-12 col-md-6 col-lg-6">
+              <div class="card bg-dark text-white">
+                <img class="card-img img-fluid" src="./Images/bannar_small/journey-box-2.jpg" alt="Card image">
+                <div class="card-img-overlay p-4">
+                  <h5 class="card-title fs-3 fw-bold">Booking hotel room</h5>
+                  <h1 class="card-text fs-4">-10% for advance booking</h1>
+                  <h1 class="card-text fs-4">Use code: BEHOTEL</h1>
+                  <button class="btn btn-secondary text-light mt-4 rounded-5">View More</button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card bg-dark text-white col-6">
-            <img class="card-img" src="./Images/bannar_small/journey-box-2.jpg" alt="Card image">
-            <div class="card-img-overlay p-5  ">
-              <h5 class="card-title fs-3 fw-bold">Booking hotel room</h5>
-              <h1 class="card-text fs-4">-10% for advance booking</h1>
-              <h1 class="card-text fs-4">Use code: BEHOTEL</h1>
-              <button class="btn btn-secondary text-light mt-5 rounded-5">View More</button>
-            </div>
-          </div>
         </div>
+        
 
 
-
+   
+        
 
 
         <div class="carosle py-5 my-5">
@@ -304,9 +301,10 @@
           <div class="swiffy-slider slider-item-show3">
             <ul class="slider-container ">
               <li class="slide-visible">
-                <div class="card shadow ">
+                <div class="card">
                   <div class="ratio ratio-16x9">
-                    <img src="./Images/inspiration/blog-hotel-01-816x428.jpg" class="card-img-top" loading="lazy" alt="...">
+                    <img src="./Images/inspiration/blog-hotel-01-816x428.jpg" class="card-img-top" loading="lazy"
+                      alt="...">
                   </div>
                   <div class="card-body p-3 p-xl-5">
                     <h3 class="card-title h5">See the world</h3>
@@ -319,9 +317,10 @@
                 </div>
               </li>
               <li class="slide-visible">
-                <div class="card shadow h-100">
+                <div class="card h-100">
                   <div class="ratio ratio-16x9">
-                    <img src="./Images/inspiration/blog-hotel-06-816x428.jpg" class="card-img-top" loading="lazy" alt="...">
+                    <img src="./Images/inspiration/blog-hotel-06-816x428.jpg" class="card-img-top" loading="lazy"
+                      alt="...">
                   </div>
                   <div class="card-body p-3 p-xl-5">
                     <h3 class="card-title h5">Tranquil locations far away</h3>
@@ -332,9 +331,10 @@
                 </div>
               </li>
               <li class="">
-                <div class="card shadow h-100">
+                <div class="card h-100">
                   <div class="ratio ratio-16x9">
-                    <img src="./Images/inspiration/blog-hotel-07-816x428.jpg" class="card-img-top" loading="lazy" alt="...">
+                    <img src="./Images/inspiration/blog-hotel-07-816x428.jpg" class="card-img-top" loading="lazy"
+                      alt="...">
                   </div>
                   <div class="card-body p-3 p-xl-5">
                     <h3 class="card-title h5">Road trip in the wilderness</h3>
@@ -345,9 +345,10 @@
                 </div>
               </li>
               <li class="">
-                <div class="card shadow h-100">
+                <div class="card h-100">
                   <div class="ratio ratio-16x9">
-                    <img src="./Images/inspiration/blog-hotel-08-816x428.jpg" class="card-img-top" loading="lazy" alt="...">
+                    <img src="./Images/inspiration/blog-hotel-08-816x428.jpg" class="card-img-top" loading="lazy"
+                      alt="...">
                   </div>
                   <div class="card-body  p-3 p-xl-5">
                     <h3 class="card-title h5">To the hidden lake side</h3>
@@ -357,9 +358,6 @@
                   </div>
                 </div>
               </li>
-
-              
-
             </ul>
 
             <button type="button" class="slider-nav" aria-label="Go left"></button>
@@ -377,18 +375,13 @@
 
 
 
-
-
-
-
-
         <div class="review py-3">
 
-          <div class="review-title ">
+          <div class="review-title">
             <h1 class="fw-bold">Every stay has a story</h1>
           </div>
 
-          <div class="swiffy-slider slider-item-show2  ">
+          <div class="swiffy-slider slider-item-show2 pt-4 ">
             <div class="slider-container">
 
               <div class="p-5 col-11 p-xl-5 text-light rounded text-black fw-bold" style="background-color:  #e9e9e9;">
@@ -487,34 +480,42 @@
               <button aria-label="Go to slide" class="active"></button>
             </div>
           </div>
-
         </div>
 
 
 
+        <div class="section-last py-5">
 
-        <div class="section-titel">
-          <h1 class="fw-bold">Share Your Moments</h1>
-        </div>
-        <div class="section1-main-content   d-flex justify-content-center align-items-center">
-          <div class="sction1-content">
-            <img src="./Images/shear_moment/Fotolia_163203222_Subscription_Monthly_M-370x250.jpg" alt="">
+          <div class="section-title text-center py-4">
+              <h1 class="fw-bold">Share Your Moments</h1>
           </div>
 
-          <div class="sction1-content">
-            <img src="./Images/shear_moment/Fotolia_179700361_Subscription_Monthly_M-370x250.jpg" alt="">
+          <div class="row justify-content-center align-items-center g-4">
+ 
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                  <div class="section1-content">
+                      <img src="./Images/shear_moment/Fotolia_163203222_Subscription_Monthly_M-370x250.jpg"
+                          alt="Image 1" class="img-fluid rounded shadow">
+                  </div>
+              </div>
+      
+       
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                  <div class="section1-content">
+                      <img src="./Images/shear_moment/Fotolia_179700361_Subscription_Monthly_M-370x250.jpg"
+                          alt="Image 2" class="img-fluid rounded shadow">
+                  </div>
+              </div>
+      
+              <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                  <div class="section1-content">
+                      <img src="./Images/shear_moment/Fotolia_52888103_Subscription_Monthly_M-370x250.jpg"
+                          alt="Image 3" class="img-fluid rounded shadow">
+                  </div>
+              </div>
           </div>
-
-          <div class="sction1-content">
-            <img src="./Images/shear_moment/Fotolia_52888103_Subscription_Monthly_M-370x250.jpg" alt="">
-
-          </div>
-
-        </div>
-        </section>
-
-
-
+      </div>
+      
       </div>
     </main>
 

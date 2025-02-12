@@ -1,18 +1,12 @@
 
-
-.image-gallery {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
-  gap: 20px; /* Space between images */
-  padding: 20px; /* Padding around the gallery */
-  background-color: #f8f9fa; /* Light background for contrast */
-  border-radius: 10px; /* Smooth edges for the gallery */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+.navbar-nav .nav-link:hover {
+  color: rgb(233, 106, 2) !important; 
+  transition: color 0.3s ease-in-out; 
 }
 
 .booking-img {
-  overflow: hidden; /* Ensures the image fits inside the container */
-  border-radius: 10px; /* Smooth corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow around individual images */
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .booking-img img {
@@ -24,14 +18,7 @@
 
 .booking-img:hover img {
   transform: scale(1.05); /* Slight zoom-in effect on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
-
-
-.navbar-nav .nav-link:hover {
-  color: rgb(233, 106, 2) !important; 
-  transition: color 0.3s ease-in-out; 
+  box-shadow: 0 8px 20px rgba(247, 246, 246, 0.3); /* Enhanced shadow on hover */
 }
 
 

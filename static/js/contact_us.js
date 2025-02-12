@@ -1,6 +1,6 @@
 
 const contact = () => {
-  const user_id = localStorage.getItem("user_id"); // Get the user ID
+  const user_id = localStorage.getItem("user_id"); 
   console.log("Logged-in User ID:", user_id);
   if(user_id){
 
@@ -13,7 +13,7 @@ const contact = () => {
   
     };
     console.log(contactData);
-    fetch("https://hotel-backend-cmcn.onrender.com/client/contact/",{
+    fetch("https://hotel-backend-3ybx.vercel.app/client/contact/",{
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(contactData),
