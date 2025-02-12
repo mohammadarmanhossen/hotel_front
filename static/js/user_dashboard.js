@@ -83,7 +83,6 @@ const loadReview = () => {
 
 
 
-
 const user_id = localStorage.getItem("user_id"); // Get the user ID
 console.log("Logged-in User ID:", user_id);
 
