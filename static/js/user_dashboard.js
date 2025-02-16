@@ -1,8 +1,6 @@
 
-
-
 const userProfile = () => {
-  const user_id = localStorage.getItem("user_id"); // Get the user ID
+  const user_id = localStorage.getItem("user_id"); 
   console.log("Logged-in User ID:", user_id);
 
   fetch("https://hotel-backend-3ybx.vercel.app/client/users/")
@@ -15,7 +13,7 @@ const userProfile = () => {
       }
 
       const parent = document.getElementById("user_profile");
-      parent.innerHTML = ""; // Clear previous content
+      parent.innerHTML = ""; 
 
       const div = document.createElement("div");
       div.classList.add("user-profile-container", "d-flex", "justify-content-center", "align-items-center", "vh-75");
@@ -43,38 +41,57 @@ const userProfile = () => {
 userProfile();
 
 
-const loadReview = () => {
-  let totalBookings = 0;  // Count total bookings
-  let totalAmount = 0; // Initialize total amount
 
-  fetch("https://hotel-backend-3ybx.vercel.app/bookeds/")
+const loadReview = () => {
+  let totalBookings = 0;
+  let totalAmount = 0;
+
+
+  fetch("http://127.0.0.1:8000/bookeds/")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
       const tableBody = document.getElementById("hotelBooked");
-      tableBody.innerHTML = ""; // Clear any existing rows
+      tableBody.innerHTML = "";
 
       data.forEach((item, index) => {
-        totalAmount += item.total_amount; // Add each booking's total amount
-        totalBookings += 1; // Count the number of bookings
+        totalAmount += item.total_amount; 
+        totalBookings += 1;
 
         const row = document.createElement("tr");
+        row.setAttribute("data-booking-id", item.id);
+        
+        let paymentButton = ''; 
+        let disableButton = ''; 
+        
+        if (item.is_paid) {
+            paymentButton = `<td><a class="btn btn-success me-3">Complete</a></td>`;
+            disableButton = `<td><p class="btn btn-secondary me-3">Disable</p></td>`;
+        } else {
+            paymentButton = `<td><a class="btn btn-info me-3" href="chekout.html?hotel_id=${item.id}&amount=${item.total_amount}&quantity=${item.room}">Payment</a></td>`;
+            disableButton = `<td><p class="btn btn-danger me-3" onclick="deleteBooking(${item.id}, ${item.total_amount})">Delete</p></td>`;
+        }
+        
         row.innerHTML = `
-          <th scope="row">${index + 1}</th> 
-          <td>${item.hotel_name}</td>
-          <td>${item.room}</td>
-          <td>${item.in_date}</td>     
-          <td>${item.out_date}</td>
-          <td>${item.total_amount}</td>
-          <button class="btn btn-danger">Delete</button>
+            <th scope="row">${index + 1}</th>
+            <td>${item.hotel_name}</td>
+            <td>${item.room}</td>
+            <td>${item.in_date}</td>
+            <td>${item.out_date}</td>
+            <td>${item.total_amount}</td>
+            ${paymentButton}
+            ${disableButton}
         `;
+        
         tableBody.appendChild(row);
         
+
+    tableBody.appendChild(row);
+
       });
 
-      // Display total amount and bookings count in UI
       document.getElementById("totalAmountDisplay").innerText = `Total Amount: $${totalAmount.toFixed(2)}`;
-      document.getElementById("totalBookings").innerText = `Total Hotel : ${totalBookings}`;
+      document.getElementById("totalBookings").innerText = `Total Hotel: ${totalBookings}`;
     })
     .catch((error) => console.error("Error fetching user data:", error));
 };
@@ -83,26 +100,32 @@ const loadReview = () => {
 
 
 
-const user_id = localStorage.getItem("user_id"); // Get the user ID
-console.log("Logged-in User ID:", user_id);
 
-document.getElementById('payButton').addEventListener('click', function() {
-  fetch(`http://127.0.0.1:8000/payment/make_payment/`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            user_id: user_id  // Send user_id in the body
-        })
+
+const deleteBooking = (bookingId, bookingAmount) => {
+  console.log(bookingId);
+  console.log(bookingAmount);
+  const confirmation = confirm("Are you sure you want to delete this booking?");
+  if (confirmation) {
+    fetch(`http://127.0.0.1:8000/bookeds/${bookingId}/`, {
+      method: "DELETE",
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.payment_url) {
-            window.location.href = data.payment_url;  // Redirect to payment URL
-        } else {
-            alert("Payment session creation failed.");
-        }
+    .then((response) => {
+      if (response.ok) {
+        alert("Booking deleted successfully!");
+        totalAmount -= bookingAmount; 
+        document.getElementById("totalAmountDisplay").innerText = `Total Amount: $${totalAmount.toFixed(2)}`; 
+        loadReview(); 
+      } else {
+        alert("Failed to delete the booking.");
+      }
     })
-  
-});
+    .catch((error) => {
+      console.error("Error deleting the booking:", error);
+      alert("An error occurred while deleting the booking.");
+    });
+  }
+};
+
+
+

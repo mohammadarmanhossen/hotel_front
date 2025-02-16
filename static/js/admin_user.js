@@ -1,5 +1,7 @@
+
+
 const loadAllUser = () => {
-    fetch("https://hotel-backend-3ybx.vercel.app/client/users/")
+    fetch("http://127.0.0.1:8000/client/users/")
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("userTableBody");

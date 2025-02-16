@@ -61,16 +61,74 @@
         <div class="form-container col-lg-6 col-md-6 col-sm-12 bg-white p-5 rounded shadow">
           <h1 class="text-center mb-4 fw-bold text-black">Hotel Booking</h1>
           <div class="card p-4 border-0 shadow-sm">
-            <form id="hotelForms" method="POST">
 
-              <!-- Payment Method -->
+            <!-- <form id="hotelForms" method="POST">
+
+          
 
 
               <div class="mb-3">
-                <label for="Hotel_booked" class="text-black fw-bold fs-5">Hotel Payment Method:</label>
+                <label for="Hotel_booked" class="text-black fw-bold fs-5">Hotel Name</label>
                 <select id="Hotel_booked" class="form-select" required>
                   <option value="" disabled selected>Select Hotel Book</option>
                 </select>
+              </div>
+
+
+     
+              <div class="mb-3">
+                <label for="Room" class="text-black fw-bold fs-5">Hotel Room:</label>
+                <input type="text" id="Room" class="form-control" placeholder="Enter room number or type" required>
+              </div>
+
+        
+              <div class="mb-3">
+                <label for="start_date" class="text-black fw-bold fs-5">Start Date:</label>
+                <input type="date" id="start_date" class="form-control" required>
+              </div>
+
+      
+              <div class="mb-3">
+                <label for="end_date" class="text-black fw-bold fs-5">End Date:</label>
+                <input type="date" id="end_date" class="form-control" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="end_date" class="text-black fw-bold fs-5">Input Amount</label>
+                select amount
+                <input type="date" id="end_date" class="form-control" required>
+              </div>
+
+             
+              <h2 id="total_amount" class="text-center text-success"></h2>
+
+              <div class="text-center">
+                <button type="submit" onclick="hotelBooked(event)" class="btn btn-secondary ">
+                  Book Now
+                </button>
+              </div>
+
+            </form> -->
+
+
+
+            <form id="hotelForms" method="POST">
+
+              <!-- Payment Method -->
+              <div class="mb-3">
+                <label for="Hotel_booked" class="text-black fw-bold fs-5">Hotel Name</label>
+                <select id="Hotel_booked" class="form-select" required>
+                  <option value="" disabled selected>Select Hotel</option>
+                  <!-- এখানে ডাইনামিকভাবে হোটেলের লিস্ট যোগ করা হবে -->
+                </select>
+              </div>
+
+
+              <!-- Input Amount -->
+        
+              <div class="mb-3">
+                <label for="Amount" class="text-black fw-bold fs-5">Amount:</label>
+                <input type="number" id="amount" class="form-control" placeholder="Enter amount number or type" required>
               </div>
 
 
@@ -79,6 +137,8 @@
                 <label for="Room" class="text-black fw-bold fs-5">Hotel Room:</label>
                 <input type="text" id="Room" class="form-control" placeholder="Enter room number or type" required>
               </div>
+
+
 
               <!-- Start Date -->
               <div class="mb-3">
@@ -92,17 +152,21 @@
                 <input type="date" id="end_date" class="form-control" required>
               </div>
 
+
               <!-- Total Amount -->
               <h2 id="total_amount" class="text-center text-success"></h2>
 
               <!-- Submit Button -->
               <div class="text-center">
-                <button type="submit" onclick="hotelBooked(event)" class="btn btn-primary w-100 py-2">
-                  Proceed to Checkout
+                <button type="submit" onclick="hotelBookeds(event)" class="btn btn-secondary">
+                  Book Now
                 </button>
               </div>
 
             </form>
+
+
+
           </div>
         </div>
 
@@ -112,14 +176,12 @@
       <!-- Review Section -->
       <div class="review d-flex flex-column align-items-center justify-content-center min-vh-50 py-5 ">
         <div class="review-title text-center mb-5">
-          <h4 class="fw-bold">This Hotel Review</h4>
-          <h1 class="fw-bold text-warning">Our Clients Say!!</h1>
+          <h1 class="fw-bold text-black">Our Clients Say!!</h1>
           <p class="fw-bold">Unable to load reviews at the moment. Please try again later.</p>
         </div>
 
         <div class="review-container col-lg-4 col-md-6 col-sm-12">
           <div class="card p-4">
-            <h2 class="text-center mb-4">Add a Review</h2>
             <form id="reviewForm" method="POST">
 
               <div class="mb-3">
@@ -141,7 +203,7 @@
               </div>
 
               <div class="text-center">
-                <button onclick="hotelReview(event)" type="button" class="btn btn-primary">Review</button>
+                <button onclick="hotelReview(event)" type="button" class="btn btn-secondary">Reviews</button>
 
               </div>
             </form>

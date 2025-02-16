@@ -1,7 +1,7 @@
 
 
 const hotel=()=>{
-  fetch("https://hotel-backend-3ybx.vercel.app/hotels/")
+  fetch("http://127.0.0.1:8000/hotels/")
   .then((res)=>res.json())
   .then((data)=>console.log(data))
 
@@ -16,16 +16,18 @@ hotels.forEach((hotel)=>{
   ${hotel.hotel_name}
   `;
   parent.appendChild(option);
+  
 });
 
 }
-// hotelName()
+
+
+
 
 
 const hotelBooked = (event) => {
 event.preventDefault();
-console.log("Hello World");
-const user_id = localStorage.getItem("user_id"); // Get the user ID
+const user_id = localStorage.getItem("user_id");
 console.log("Logged-in User ID:", user_id);
 if(user_id){
 
@@ -33,26 +35,25 @@ const hotel_name = getValue("Hotel_booked").value;
 const room = getValue("Room").value;
 const in_date = getValue("start_date").value;
 const out_date = getValue("end_date").value;
-const total_amounts=getValue("total_amount")
+const total_amount=getValue("amount");
 
 const info = {
   hotel_name,
   room,
   in_date,
   out_date,
-  total_amounts,
-  // payment,
+  total_amount,
 };
-console.log(info);
+console.log("hello ",info);
 
-// Validate form fields before submitting
-if (!hotel_name || !room || !in_date || !out_date || !total_amounts) {
+
+if (!hotel_name || !room || !in_date || !out_date || !total_amount) {
   alert("Please fill in all required fields.");
   return;
 }
 
 // Submit data to the API
-fetch("https://hotel-backend-3ybx.vercel.app/bookeds/", {
+fetch("http://127.0.0.1:8000/bookeds/", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(info),
@@ -89,6 +90,97 @@ else{
 
 
 
+
+
+const hotelBookeds = (event) => {
+  event.preventDefault();
+  const user_id = localStorage.getItem("user_id"); // Get the user ID
+  console.log("Logged-in User ID:", user_id);
+  if(user_id){
+  
+  const hotel_name = getValue("Hotel_booked").value;
+  const room = getValue("Room").value;
+  const in_date = getValue("start_date").value;
+  const out_date = getValue("end_date").value;
+  const total_amount = document.getElementById("amount").value.trim();
+  
+  const info = {
+    hotel_name,
+    room,
+    in_date,
+    out_date,
+    total_amount,
+  };
+  console.log("hello ",info);
+  
+  // Validate form fields before submitting
+  if (!hotel_name || !room || !in_date || !out_date || !total_amount) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+  
+  // Submit data to the API
+  fetch("http://127.0.0.1:8000/bookeds/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(info),
+  })
+    .then((response) => {
+      if (response.ok) return response.json();
+      throw new Error("Failed to book the hotel");
+    })
+    .then((data) => {
+      console.log(data);
+      
+      Swal.fire({
+        title: 'Success!',
+        text: 'Hotel Booking Successfully.',
+        icon: 'success',
+        confirmButtonText: 'Great!',
+      })
+    });
+  }
+  else{
+    Swal.fire({
+    title: 'Error!',
+    text: 'Login Your Account',
+    icon: 'error',
+    confirmButtonText: 'Cool'
+  
+    }).then(()=>{
+       window.location.href="login.html";
+    })
+  }
+  };
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const hotelReview=(event)=>{
   event.preventDefault();
   const user_id = localStorage.getItem("user_id"); // Get the user ID
@@ -107,7 +199,7 @@ const hotelReview=(event)=>{
       icon: 'success',
       confirmButtonText: 'Great!',
     })
-    fetch("https://hotel-backend-3ybx.vercel.app/reviews/", {
+    fetch("http://127.0.0.1:8000/reviews/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reviewData),

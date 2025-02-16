@@ -53,7 +53,6 @@ const navbarLoad=()=>{
             <li class="nav-item"><a class="nav-link text-black  fw-bold px-3 mx-3"href="login.html">LOGIN</a></li>
         
             `
-
     }
 }
 navbarLoad();

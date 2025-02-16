@@ -1,4 +1,4 @@
-const baseURL = "https://hotel-backend-3ybx.vercel.app/hotels/";
+const baseURL = "http://127.0.0.1:8000/hotels/";
 
 const loadServices = (search) => {
   console.log("Search term:", search);
@@ -25,10 +25,12 @@ const displayService = (hotels) => {
   parent.innerText = "";
   if (!hotels || hotels.length === 0) {
     parent.innerHTML =
-      '<h class="text-center fs-3 fw-bold">Hotel Not Found.</h1>';
+    '<h class="text-center fs-3 fw-bold">Hotel Not Found.</h1>';
     return;
   }
   hotels.forEach((hotel) => {
+    console.log("my hotel ", hotel.price_per_night);
+
     const li = document.createElement("li");
     const imageUrl = hotel.image_url.startsWith("http")
       ? hotel.image_url
@@ -44,7 +46,7 @@ const displayService = (hotels) => {
       (hotel.description.split(" ").length > 10 ? "..." : "");
 
     li.innerHTML = `
-      <div class="card border-1 rounded-3">
+      <div class="card ">
         <div class="ratio ratio-16x9">
           <img src="${imageUrl}" class="card-img-top" alt="Hotel Image" />
         </div>
@@ -54,19 +56,20 @@ const displayService = (hotels) => {
             <i class="bi bi-geo-alt-fill text-danger"></i> ${addressWords}
           </h6>
           <div class="d-flex align-items-baseline mb-3">
-            <h5 class="hotel-price fw-bold text-success me-2"> $${hotel.price_per_night} </h5>
+            <h5 class="hotel-price fw-bold text-success me-2" id="total_amount"> $ ${hotel.price_per_night} </h5>
             <span class="fw-bold text-muted">/per room</span>
           </div>
           <p class="hotel-description text-secondary">${descriptionWords}</p>
           <p class="hotel-description text-secondary">${hotel.district_name}</p>
         </div>
-        <div class="card-footer d-flex justify-content-between bg-light">
-          <a href="hotel_view.html?id=${hotel.id}" class="btn btn-outline-secondary w-50 me-2" data-id="${hotel.id}">Details</a>
-          <a href="booking.html?id=${hotel.id}" class="btn btn-secondary w-50" data-id="${hotel.id}">Booking</a>
+        <div class="card-footer border-top-0 bg-white d-flex justify-content-start gap-2 bg-light">
+          <a href="hotel_view.html?id=${hotel.id}" class="btn btn-secondary me-4 px-4 text-white" data-id="${hotel.id}"> Details</a>
+          <a href="booking.html" class="btn btn-secondary me-3 px-4" data-id="${hotel.id}">Booking </a>
         </div>
       </div>
     `;
     parent.appendChild(li);
+    
   });
 };
 
@@ -79,8 +82,67 @@ const handleSerch = () => {
   }, 300); 
 };
 
+
+console.log(localStorage);
+
+const hotel_view_booked = (event) => {
+  event.preventDefault();
+  console.log("code is worked");
+  const user_id = localStorage.getItem("user_id"); 
+  console.log("Logged-in User ID:", user_id);
+  if (user_id) {
+    const hotel_name = document.getElementById("hotel_names").value;
+    const room = document.getElementById("rooms").value;
+    const in_date = document.getElementById("in_dates").value;
+    const out_date = document.getElementById("out_dates").value;
+    const total_amount = document.getElementById("price_per_night").value;
+
+    
+    const booked = {
+      hotel_name,
+      room,
+      in_date,
+      out_date,
+      total_amount,
+    };
+    
+    console.log( "booked ", booked);
+
+
+    fetch("http://127.0.0.1:8000/bookeds/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(booked),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("data ", data);
+        swal.fire({ 
+          title: "Success!",
+          text: "Hotel Booking Successfully.",
+          icon: "success",
+          confirmButtonText: "Great!",
+        });
+      });
+  } else {
+    swal
+      .fire({
+        title: "Error!",
+        text: "Please Login Your Account",
+        icon: "error",
+        confirmButtonText: "Okay",
+      })
+      .then(() => {
+        window.location.href = "login.html";
+      });
+  }
+};
+  
+
+
+
 const loadDistrict = () => {
-  fetch("https://hotel-backend-3ybx.vercel.app/district/")
+  fetch("http://127.0.0.1:8000/district/")
     .then((res) => res.json())
     .then((data) => {
       const parent = document.getElementById("district");
@@ -100,6 +162,9 @@ const loadDistrict = () => {
     });
 };
 
+
+
+
 loadDistrict();
 
 const loadHotelDetails = () => {
@@ -107,7 +172,7 @@ const loadHotelDetails = () => {
   const hotelId = params.get("id");
 
 
-  fetch(`https://hotel-backend-3ybx.vercel.app/hotels/${hotelId}`)
+  fetch(`http://127.0.0.1:8000/hotels/${hotelId}`)
     .then((res) => res.json())
     .then((data) => displayHotelDetails(data))
     .catch((err) => console.log(err));
@@ -141,57 +206,10 @@ const displayHotelDetails = (hotel) => {
 
   const hotelNameInput = document.getElementById("hotel_names");
   hotelNameInput.value = hotel.id;
+
+  const hotelPriceInput = document.getElementById("price_per_night");
+  hotelPriceInput.value = hotel.price_per_night;
 };
+
+
 loadHotelDetails();
-
-const hotel_view_booked = (event) => {
-  event.preventDefault();
-  const user_id = localStorage.getItem("user_id"); 
-  console.log("Logged-in User ID:", user_id);
-  if (user_id) {
-    const hotel_name = document.getElementById("hotel_names").value;
-    const room = document.getElementById("rooms").value;
-    const in_date = document.getElementById("in_dates").value;
-    const out_date = document.getElementById("out_dates").value;
-    const total_amount = document.getElementById("total_amount").value;
-
-   
-    const booked = {
-      hotel_name,
-      room,
-      in_date,
-      out_date,
-      total_amount,
-      // payment,
-    };
-    
-    console.log(booked);
-    fetch("https://hotel-backend-3ybx.vercel.app/bookeds/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(booked),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        swal.fire({
-          title: "Success!",
-          text: "Hotel Booking Successfully.",
-          icon: "success",
-          confirmButtonText: "Great!",
-        });
-      });
-  } else {
-    swal
-      .fire({
-        title: "Error!",
-        text: "Please Login Your Account",
-        icon: "error",
-        confirmButtonText: "Okay",
-      })
-      .then(() => {
-        window.location.href = "login.html";
-      });
-  }
-};
-  

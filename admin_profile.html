@@ -20,39 +20,50 @@
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark ">
-          <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3 ">
+          <div class="container ">
             <a class="navbar-brand d-flex align-items-center" href="#">
               <img id="hotel_img" class="rounded" src="Images/Drame.webp" alt="Logo" style="height: 40px;">
-              <h1 class="logo fs-3 fw-bold ms-2 mb-0 text-dark">VILLAGIO</h1>
+              <h1 class="logo fs-3 fw-bold ms-2 mb-0 text-white">VILLAGIO</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
               <span class="navbar-toggler-icon bg-dark"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto">
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Admin Profile</button>
-                  <ul class="dropdown-menu text-center">
-                    <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="admin_panel.html">Admin</a></li>
-                    <li><a class="text-decoration-none fw-bold bg-light px-4 py-1 rounded" href="home.html">Logout</a></li>
-                  </ul>
-                </div>
+                  <li class="nav-item dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Profile
+                      </button>
+                      <ul class="dropdown-menu text-center">
+                          <li>
+                              <a class="dropdown-item fw-bold" href="admin_panel.html">Admin</a>
+                          </li>
+                          <li>
+                              <button onclick="handleAdminLogout()" class="dropdown-item btn btn-danger">
+                                  Logout
+                              </button>
+                          </li>
+                      </ul>
+                  </li>
               </ul>
-            </div>
+          </div>
+          
+
           </div>
         </nav>
         
         <main>
           <div class="container-fluid d-flex justify-content-center align-items-center bg-light vh-100">
             <div class="account p-5">
-              <div class="card text-center" style="width: 30rem; color: rgb(143, 153, 143);">
+              <div class="card text-center" style="width: 30rem; color: rgb(194, 105, 105);">
                 <img src="/Images/Drame.webp" class="card-img-top bg-warning rounded-circle mx-auto mt-3" alt="Profile Picture" style="width: 100px; height: 100px;">
                 <div class="card-body">
-                  <h5 id="username" class="card-title">Username: admin</h5>
-                  <h5 id="first_name" class="card-title">Name: Admin</h5>
+                  <h2>Welcome, <span id="admin-name">admin</span>!</h2>
+                 <p>Your Role: <span id="admin-role">Admin</span></p>
                   <p id="email" class="card-text">Email: admin@gmail.com</p>
-                  <a href="#" class="btn btn-primary w-100 mt-3">Edit Profile</a>
+                  <a href="#" class="btn btn-secondary mt-3">Edit Profile</a>
                 </div>
               </div>
             </div>
@@ -68,7 +79,7 @@
             color: #333; 
           }
           .btn-primary:hover {
-            background-color: #004085; 
+            background-color: #a4a5a7; 
           }
         </style>
         
@@ -118,6 +129,7 @@
     <script src="./static/js/admin.js"></script>
     <script src="./static/js/app.js"></script>
     <script src="./static/js/auth.js"></script>
+    <script src="./static/js/admin_profile.js"></script>
 
     <script src="./static/js/home.js"></script>
     <script src="./static/js/contact_us.js"></script>

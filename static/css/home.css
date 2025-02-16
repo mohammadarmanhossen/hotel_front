@@ -37,6 +37,15 @@
 }
 
 
+
+  .card-footer a:focus {
+      outline: none;
+  }
+
+
+
+
+
 .main-container-all{
   padding-inline: 15%;
   padding-block: 50px;

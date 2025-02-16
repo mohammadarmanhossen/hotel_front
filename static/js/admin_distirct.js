@@ -1,5 +1,5 @@
 const loadAllDistirct= () => {
-    fetch("https://hotel-backend-3ybx.vercel.app/district/")
+    fetch("http://127.0.0.1:8000/district/")
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("districtTableBody");
@@ -21,6 +21,10 @@ const loadAllDistirct= () => {
       .catch((error) => console.error("Error fetching user data:", error));
   };
   
+  
+
+
+
   
   // Call the function when the page loads
 loadAllUser();

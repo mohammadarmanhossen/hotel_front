@@ -15,9 +15,9 @@ body {
   }
   
   .sidebar {
-    background-color:gray;
+    background-color:#5C636A;
     height: 100vh;
-    color: #ffffff;
+    color: #1a1818;
     padding-top: 20px;
     position: fixed;
     top: 0;
@@ -27,15 +27,18 @@ body {
   }
   .sidebar a {
     text-decoration: none;
-    color: #ffffff;
+    color: #8a8484;
     display: block;
     padding: 10px 20px;
     transition: 0.3s;
   }
-  .sidebar a:hover {
-    background-color: #495057;
-    color: #fff;
-  }
+/* Hover effect */
+.sidebar a.hover-effect:hover {
+  background-color: #0062cc; /* Blue background on hover */
+  color: #fff; /* Text color on hover */
+  transform: scale(1.05); /* Slightly scale up the link */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add a shadow to give a lifting effect */
+}
   .content {
     margin-left: 270px;
     padding: 20px;

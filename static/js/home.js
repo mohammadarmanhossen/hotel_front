@@ -55,7 +55,7 @@
 //           <p class="hotel-district text-primary fw-bold">${hotel.district_name}</p>
    
 //         </div>
-//         <div class="card-footer d-flex justify-content-between bg-light">
+//         <div class=" d-flex justify-content-between bg-light">
 //           <a href="hotel_view.html?id=${hotel.id}" class="btn btn-outline-primary w-50 me-2">Details</a>
 //           <a href="booking.html?id=${hotel.id}" class="btn btn-primary w-50">Booking</a>
 //         </div>
@@ -151,11 +151,7 @@
 // };
 // loadHotelDetails();
 
-// const getValue = (id) => {
-//     const value = document.getElementById(id); 
-//     return value;
-//   };
-  
+
 
 
 

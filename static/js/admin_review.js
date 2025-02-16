@@ -1,10 +1,10 @@
 const loadReview= () => {
-    fetch("https://hotel-backend-3ybx.vercel.app/reviews/")
+    fetch("http://127.0.0.1:8000/reviews/")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         const tableBody = document.getElementById("reviewTableBody");
-        tableBody.innerHTML = ""; // Clear any existing rows
+        tableBody.innerHTML = "";
         
         data.forEach((item,index) => {
           const row = document.createElement("tr");
@@ -25,7 +25,6 @@ const loadReview= () => {
       .catch((error) => console.error("Error fetching user data:", error));
   };
 
-  // Call the function when the page loads
 loadAllUser();
 loadReview()
 

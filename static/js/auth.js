@@ -24,8 +24,8 @@ const handleRegistration = (event) => {
         )
       )
        {
-  
-        fetch("https://hotel-backend-3ybx.vercel.app/client/register/", {
+        
+        fetch("http://127.0.0.1:8000/client/register/", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(info),
@@ -57,68 +57,120 @@ const handleRegistration = (event) => {
 
 
 
- const handleLogin=(event)=>{
-    event.preventDefault(event)
-    const username=getValue("login-username").value;
-    const password=getValue("login-password").value;
-    const admin_user = "arman";
-    const admin_pass = "123";
-    
-  if (username === admin_user && password === admin_pass) {
-    window.location.href = "admin_user.html";
-    return;
-  }
-  else{
-    console.log(username,password);
-    
-    if((username,password)){
-      fetch("https://hotel-backend-3ybx.vercel.app/client/login/",{
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ username, password }),
-        })
-        
-        .then((res) => res.json())
-        .then((data) => {
-        console.log(data);
-         localStorage.setItem("token",data.token);
-         localStorage.setItem("user_id",data.user_id);
-         if(data.token && data.user_id){
-          localStorage.setItem("token",data.token);
-          localStorage.setItem("user_id",data.user_id);
-          
+
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+  
+    const username = getValue("login-username").value;
+    const password = getValue("login-password").value;
+
+   
+  
+    // Check if both username and password are provided
+    if (username && password) {
+      const data = {
+        username: username,
+        password: password
+      };
+  
+      // Admin login request
+      fetch("http://127.0.0.1:8000/client/admin/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data) // Send the data as JSON
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.token) {
+          // Admin login success
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("admin_id", data.admin_id);
+  
           Swal.fire({
             title: 'Success!',
-            text: 'Your Account Successfully Login.',
+            text: 'Admin logged in successfully.',
             icon: 'success',
             confirmButtonText: 'OK'
-          }).then(()=>{
-             window.location.href="User_dashboard.html";
+          }).then(() => {
+            window.location.href = "admin_panel.html"; // Redirect to the admin dashboard
+          });
+        } 
+
+
+        else {
+          const data = {
+            username: username,
+            password: password
+          };
+          // If admin login fails, check for normal user login
+          fetch("http://127.0.0.1:8000/client/login/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data) // Send the data as JSON
           })
-         }
-
-        
+          .then(res => res.json())
+          .then(data => {
+            if (data.token && data.user_id) {
+              // Normal user login success
+              localStorage.setItem("token", data.token);
+              localStorage.setItem("user_id", data.user_id);
+  
+              Swal.fire({
+                title: 'Success!',
+                text: 'Your Account has been logged in successfully.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                window.location.href = "home.html"; // Redirect to home page
+              });
+            } else {
+              // If both admin and normal user login fail
+              Swal.fire({
+                title: 'Error!',
+                text: 'Invalid credentials.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+              });
+            }
+          })
+          .catch(error => {
+            Swal.fire({
+              title: 'Error!',
+              text: 'There was a problem with the login request.',
+              icon: 'error',
+              confirmButtonText: 'OK'
+            });
+            console.error("Error during user login:", error);
+          });
+        }
+      })
+      .catch(error => {
+        Swal.fire({
+          title: 'Error!',
+          text: 'There was a problem with the login request.',
+          icon: 'error',
+          confirmButtonText: 'OK'
         });
-    }    
-      
-  }
-
-
-  }
-  const getValue = (id) => {
-    const value=document.getElementById(id);
-    return value; 
-  };
-
-
-const showModal = (modalId, message) => {
-    const modal = new bootstrap.Modal(document.getElementById(modalId));
-    const modalBody = document.querySelector(`#${modalId} .modal-body`);
-    if (modalBody) {
-      modalBody.textContent = message;
+        console.error("Error during admin login:", error);
+      });
+    } else {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Please enter both username and password.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
     }
-    modal.show();
   };
+  
+
+
+
 
 
 const handleLogout = (event) => {
@@ -136,6 +188,7 @@ const handleLogout = (event) => {
     })
       .then((res) => res.json())
       .then((data) => {
+
         console.log("Logout successful", data);
         localStorage.removeItem("token");
         localStorage.removeItem("user_id");
@@ -156,12 +209,58 @@ const handleLogout = (event) => {
   
   
 
+  const handleAdminLogout = () => {
+    const token = localStorage.getItem("token");
 
+    fetch("http://127.0.0.1:8000/client/admin/logout/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${token}`
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === "Logged out successfully") 
+          {  
+            localStorage.removeItem("token"); 
+            localStorage.removeItem("admin_id");
+            window.location.href = "login.html"; 
+
+            Swal.fire({
+                title: 'Success!',
+                text: 'Admin logged out successfully.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            })
+        } else {
+            Swal.fire({
+                title: 'Error!',
+                text: data.error || 'There was an error logging out.',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
+    })
+    .catch(error => {
+        Swal.fire({
+            title: 'Error!',
+            text: 'There was a problem with the logout request.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+        console.error("Error during admin logout:", error);
+    });
+};
+
+
+  const getValue = (id) => {
+    const value=document.getElementById(id);
+    return value; 
+  };
 
 
 
 
 
   
-
-

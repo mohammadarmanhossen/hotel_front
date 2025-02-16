@@ -1,6 +1,6 @@
 
 const loadAllHotel = () => {
-    fetch("https://hotel-backend-3ybx.vercel.app/hotels/")
+    fetch("http://127.0.0.1:8000/hotels/")
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("hotelTableBody");
@@ -63,7 +63,7 @@ const loadAllHotel = () => {
   
     console.log(formData);
   
-    fetch("https://hotel-backend-3ybx.vercel.app/hotels/",{
+    fetch("http://127.0.0.1:8000/hotels/",{
       method: "POST",
       body: formData, 
     })
@@ -83,7 +83,7 @@ const loadAllHotel = () => {
 
 
 const loadDistrictsForForm = () => {
-    fetch("https://hotel-backend-3ybx.vercel.app/district/")
+    fetch("http://127.0.0.1:8000/district/")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Failed to fetch districts: ${res.statusText}`);

@@ -17,7 +17,7 @@
       </nav>
     <main>
        
-      <div class="bar d-flex bg-black">
+      <div class="bar d-flex bg-black align-items-center">
         <div class="titel  col-4  px-5 p-2">
           <h2 class="text-light mb-4">
             <a href="admin_panel.html" class="text-light text-decoration-none">Admin</a>
@@ -29,10 +29,11 @@
         <div class="titel col-4  px-5 p-2">
 
           <div class="ms-auto text-end">
-            <button class="btn btn-secondary" type="button">
-              <a class="fw-bold fs-4 text-black text-decoration-none" href="home.html">Logout</a>
+            <button onclick="handleAdminLogout()" class="btn btn-secondary" type="button">
+              logout
               </button>
           </div>
+
         </div>
       </div>
 
@@ -40,11 +41,11 @@
 
       <div class="col-12 d-flex">
 
-       <div class="sidebar col-2 text-light bg-secondary p-5">
+       <div class="sidebar col-2 text-light bg-secondary p-4">
        
         <a href="admin_user.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📌Users</a>
         <a href="admin_hotel.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">🏨 Hotels</a>
-        <a href="admin_contact.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📞 Contacts</a>
+        <a href="admin_contact.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📞Contacts</a>
         <a href="admin_review.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">⭐ Reviews</a>
         <a href="admin_district.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📍 Districts</a>
       </div>
@@ -63,6 +64,7 @@
               </tr>
             </thead>
             <tbody id="userTableBody">
+              
               <!-- Dynamic rows will be added here -->
             </tbody>
           </table>
@@ -73,7 +75,7 @@
     
       
        
-    <footer class="footer bg-dark text-black py-4">
+    <footer class="footer bg-black text-white py-4">
       <div class="container">
         <div class="row">
           <!-- Logo and About Section -->
@@ -90,6 +92,7 @@
               <li><a href="#" class="text-black text-decoration-none">Contact Us</a></li>
               <li><a href="registration.html" class="text-black text-decoration-none">Sign Up</a></li>
               <li><a href="login.html" class="text-black text-decoration-none">Login</a></li>
+              handleAdminLogout()
             </ul>
           </div>
           <!-- Contact Info -->
