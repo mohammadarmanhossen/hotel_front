@@ -2,7 +2,7 @@ const userProfile = () => {
     const user_id = localStorage.getItem("user_id"); // Get the user ID
     console.log("Logged-in User ID:", user_id);
   
-    fetch("https://hotel-backend-3ybx.vercel.app/client/users/")
+    fetch("http://127.0.0.1:8000/client/users/")
       .then((res) => res.json())
       .then((data) => {
         const currentUser = data.find((item) => item.id === parseInt(user_id));

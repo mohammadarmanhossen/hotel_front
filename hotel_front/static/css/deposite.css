@@ -1,0 +1,17 @@
+   /* Hover effect for dropdown links */
+   .dropdown-item:hover {
+    background-color: #ffc107 !important;
+    color: #fff !important;
+  }
+
+  /* Adjusting alignment and spacing for profile dropdown */
+  .dropdown-menu {
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #amount-display {
+    color: #333;
+    font-weight: bold;
+  }
