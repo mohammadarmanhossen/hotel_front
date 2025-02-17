@@ -179,7 +179,7 @@ const handleLogout = (event) => {
     console.log("Logging out...");
     const token = localStorage.getItem("token");
     console.log(token);
-    fetch("https://hotel-backend-3ybx.vercel.app/client/logout/", {
+    fetch("http://127.0.0.1:8000/client/logout/", {
       method: "GET",
       headers: {
         Authorization: `Token ${token}`,

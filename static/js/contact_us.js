@@ -13,7 +13,7 @@ const contact = () => {
   
     };
     console.log(contactData);
-    fetch("https://hotel-backend-3ybx.vercel.app/client/contact/",{
+    fetch("http://127.0.0.1:8000/client/contact/",{
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(contactData),

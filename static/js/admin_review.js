@@ -11,8 +11,7 @@ const loadReview= () => {
           
           row.innerHTML = `
             <th scope="row">${index + 1}</th>  
-            <td>${item.rating}</td>
-            <td>${item.user}</td>     
+            <td>${item.rating}</td>    
             <td>${item.created}</td>
             <td>${item.body}</td>
             <td><button class="btn btn-danger btn-sm">Delete</button></td>

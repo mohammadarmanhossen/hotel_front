@@ -27,7 +27,3 @@ const loadAllUser = () => {
 
   // Call the function when the page loads
 loadAllUser();
-loadAllHotel();
-loadAllDistirct();
-loadReview()
-loadDistrictsForForm();

@@ -1,8 +1,9 @@
 const loadAllContact= () => {
-    fetch("https://hotel-backend-3ybx.vercel.app/client/contact/")
+    fetch("http://127.0.0.1:8000/client/contact/")
       .then((res) => res.json())
       .then((data) => {
-        const tableBody = document.getElementById("districtTableBody");
+        console.log(data);
+        const tableBody = document.getElementById("contactTableBody");
         tableBody.innerHTML = ""; // Clear any existing rows
         
         data.forEach((item,index) => {
@@ -10,9 +11,8 @@ const loadAllContact= () => {
           
           row.innerHTML = `
             <th scope="row">${index + 1}</th>
-            <td>${item. district_name}</td>
-            <td>${item.slug}</td>
-             <td><button class="btn btn-danger btn-sm">Delete</button></td>
+            <td>${item. subject}</td>
+            <td>${item.message}</td>
           `;
           
           tableBody.appendChild(row);
@@ -21,9 +21,4 @@ const loadAllContact= () => {
       .catch((error) => console.error("Error fetching user data:", error));
   };
 
-// Call the function when the page loads
-loadAllUser();
-loadAllHotel();
-loadAllDistirct();
-loadReview()
-loadDistrictsForForm();
+loadAllContact();
