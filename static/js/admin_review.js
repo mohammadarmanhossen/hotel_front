@@ -14,8 +14,6 @@ const loadReview= () => {
             <td>${item.rating}</td>    
             <td>${item.created}</td>
             <td>${item.body}</td>
-            <td><button class="btn btn-danger btn-sm">Delete</button></td>
-      
           `;
           
           tableBody.appendChild(row);
@@ -24,7 +22,7 @@ const loadReview= () => {
       .catch((error) => console.error("Error fetching user data:", error));
   };
 
-loadAllUser();
+
 loadReview()
 
 

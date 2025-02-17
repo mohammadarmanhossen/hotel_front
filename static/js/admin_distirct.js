@@ -12,7 +12,6 @@ const loadAllDistirct= () => {
             <th scope="row">${index + 1}</th>
             <td>${item. district_name}</td>
             <td>${item.slug}</td>
-             <td><button class="btn btn-danger btn-sm">Delete</button></td>
           `;
           
           tableBody.appendChild(row);
