@@ -36,7 +36,7 @@ const displayService = (hotels) => {
       ? hotel.image_url
       : `${baseURL}${hotel.image_url}`;
     const descriptionWords =
-      hotel.description.split(" ").slice(0, 10).join(" ") +
+      hotel.description.split(" ").slice(0, 7).join(" ") +
       (hotel.description.split(" ").length > 10 ? "..." : "");
     const namenWords =
       hotel.hotel_name.split(" ").slice(0, 2).join(" ") +
@@ -50,20 +50,20 @@ const displayService = (hotels) => {
         <div class="ratio ratio-16x9">
           <img src="${imageUrl}" class="card-img-top" alt="Hotel Image" />
         </div>
-        <div class="card-body p-4 d-flex flex-column">
+        <div class="card-body p-2 d-flex flex-column">
           <h2 class="hotel-title fw-bold mb-3 text-black">${namenWords}</h2>
           <h6 class="hotel-address text-muted mb-2">
             <i class="bi bi-geo-alt-fill text-danger"></i> ${addressWords}
           </h6>
-          <div class="d-flex align-items-baseline mb-3">
+          <div class="d-flex align-items-baseline  mb-3">
             <h5 class="hotel-price fw-bold text-success me-2" id="total_amount"> $ ${hotel.price_per_night} </h5>
             <span class="fw-bold text-muted">/per room</span>
           </div>
           <p class="hotel-description text-secondary">${descriptionWords}</p>
-          <p class="hotel-description text-secondary">${hotel.district_name}</p>
+          <p class="hotel-description text-secondary ">${hotel.district_name}</p>
         </div>
-        <div class="card-footer border-top-0 bg-white d-flex justify-content-start gap-2 bg-light">
-          <a href="hotel_view.html?id=${hotel.id}" class="btn btn-secondary me-4 px-4 text-white" data-id="${hotel.id}"> Details</a>
+        <div class="card-footer border-top-0 bg-white d-flex justify-content-start gap-2  bg-light">
+          <a href="hotel_view.html?id=${hotel.id}" class="btn btn-secondary me-4  text-white" data-id="${hotel.id}"> Details</a>
           <a href="booking.html" class="btn btn-secondary me-3 px-4" data-id="${hotel.id}">Booking </a>
         </div>
       </div>

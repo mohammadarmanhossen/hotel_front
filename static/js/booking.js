@@ -155,26 +155,6 @@ const hotelBookeds = (event) => {
   
   
   
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -187,8 +167,9 @@ const hotelReview=(event)=>{
 
   if(user_id){
     const body=document.getElementById("review_body").value.trim();
-    const rating=document.getElementById("rating_body").value.trim();
+    const rating=document.getElementById("rating_body");
     const reviewData={
+      user_id,
       body,
       rating,
     }

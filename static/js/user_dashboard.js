@@ -159,9 +159,35 @@ const loadReview = () => {
 
 
 
-
-
 loadReview();
+
+
+
+
+// const deleteBooking = (bookingId, bookingAmount) => {
+//   console.log(bookingId);
+//   console.log(bookingAmount);
+//   const confirmation = confirm("Are you sure you want to delete this booking?");
+//   if (confirmation) {
+//     fetch(`http://127.0.0.1:8000/bookeds/${bookingId}/`, {
+//       method: "DELETE",
+//     })
+//     .then((response) => {
+//       if (response.ok) {
+//         totalAmount -= bookingAmount; 
+//         document.getElementById("totalAmountDisplay").innerText = `Total Amount: $${totalAmount.toFixed(2)}`; 
+//         loadReview(); 
+//       } else {
+//         alert("Failed to delete the booking.");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Error deleting the booking:", error);
+
+//     });
+//   }
+// };
+
 
 
 
@@ -169,27 +195,23 @@ loadReview();
 const deleteBooking = (bookingId, bookingAmount) => {
   console.log(bookingId);
   console.log(bookingAmount);
-  const confirmation = confirm("Are you sure you want to delete this booking?");
-  if (confirmation) {
+
     fetch(`http://127.0.0.1:8000/bookeds/${bookingId}/`, {
       method: "DELETE",
     })
     .then((response) => {
       if (response.ok) {
-        alert("Booking deleted successfully!");
         totalAmount -= bookingAmount; 
         document.getElementById("totalAmountDisplay").innerText = `Total Amount: $${totalAmount.toFixed(2)}`; 
         loadReview(); 
+        window.location.reload();
       } else {
         alert("Failed to delete the booking.");
       }
     })
     .catch((error) => {
       console.error("Error deleting the booking:", error);
-      alert("An error occurred while deleting the booking.");
+
     });
-  }
+
 };
-
-
-

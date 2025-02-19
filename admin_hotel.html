@@ -16,27 +16,27 @@
 
 <body>
   <header>
-   
+
     <main>
       <div class="bar d-flex bg-black ">
         <div class="titel col-4  px-5 p-2">
           <h2 class="text-light mb-4">
             <a href="admin_panel.html" class="text-light text-decoration-none">Admin</a>
-          </h2>  
+          </h2>
         </div>
         <div class="titel  col-4  px-5 p-2">
           <h2 class="text-center  text-light mb-4">Hotel Management</h2>
         </div>
         <div class="titel col-4  px-5 p-2">
 
-         
-          
+
+
           <div class="ms-auto text-end">
             <button onclick="handleAdminLogout()" class="btn btn-secondary" type="button">
               logout
-              </button>
+            </button>
           </div>
-          
+
         </div>
 
       </div>
@@ -59,7 +59,8 @@
 
 
         <div class="col-10 bg-light text-black p-4 shadow">
-        <h4 class="text-end pt-3 p-2"> <button type="button" class="btn btn-primary text-end mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add New Hotel</button></h4>
+          <h4 class="text-end pt-3 p-2"> <button type="button" class="btn btn-primary text-end mb-3"
+              data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add New Hotel</button></h4>
 
           <table class="table table-striped table-bordered shadow-sm">
             <thead class="thead-dark">
@@ -84,8 +85,10 @@
     </main>
 
 
+
+
     <!-- Modal area -->
-    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -93,6 +96,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+            <!-- Hotel Form -->
             <form id="hotelForm" method="POST" action="/submit-hotel-details">
               <div class="mb-3">
                 <label for="address-name" class="col-form-label">Address:</label>
@@ -109,10 +113,10 @@
 
               <div class="mb-3">
                 <label for="districts" class="col-form-label">District:</label>
-                <select id="districts" class="form-select col-4 col-md-4 p-2 border-1 rounded" required>
-                  <option value="" disabled selected>Select District</option>
-             
-
+                <select id="districts" class="form-select col-4 col-md-4 p-2 border-1 rounded" name="district" required>
+                  <option value="item" disabled selected>Select District</option>
+                
+                  
 
                 </select>
               </div>
@@ -126,74 +130,19 @@
                 <input type="number" class="form-control" id="price-night-name" name="price_per_night" required>
               </div>
               <div class="mb-3">
-                <label for="photo-name" class="col-form-label">Photo:</label>
-                <input type="file" class="form-control" id="image" name="photo" required>
+                <label for="image" class="col-form-label">Upload Image:</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
               </div>
+              
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button onclick="handleHotel(event)" type="button" class="btn btn-primary">Send message</button>
+
+            <button onclick="handleHotel(event)" type="button" class="btn btn-primary">Add Hotel</button>
           </div>
         </div>
       </div>
-    </div> -->
-
-
-
-
-
-    <!-- Modal area -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Hotel</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Hotel Form -->
-        <form id="hotelForm" method="POST" action="/submit-hotel-details">
-          <div class="mb-3">
-            <label for="address-name" class="col-form-label">Address:</label>
-            <input type="text" class="form-control" id="address-name" name="address" required>
-          </div>
-          <div class="mb-3">
-            <label for="rooms-name" class="col-form-label">Rooms:</label>
-            <input type="number" class="form-control" id="rooms-name" name="rooms" required>
-          </div>
-          <div class="mb-3">
-            <label for="name-name" class="col-form-label">Name:</label>
-            <input type="text" class="form-control" id="name-name" name="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="districts" class="col-form-label">District:</label>
-            <select id="districts" class="form-select col-4 col-md-4 p-2 border-1 rounded" name="district" required>
-              <option value="" disabled selected>Select District</option>
-              <!-- Dynamic district options will go here -->
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="description-name" class="col-form-label">Description:</label>
-            <textarea class="form-control" id="description-name" name="description" required></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="price-night-name" class="col-form-label">Price/Night:</label>
-            <input type="number" class="form-control" id="price-night-name" name="price_per_night" required>
-          </div>
-          <div class="mb-3">
-            <label for="image-link" class="col-form-label">Image Link:</label>
-            <input type="url" class="form-control" id="image-link" name="image_url" placeholder="Enter image URL" required>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onclick="handleHotel(event)" type="button" class="btn btn-primary">Send message</button>
-      </div>
     </div>
-  </div>
-</div>
 
 
 

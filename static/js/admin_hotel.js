@@ -38,7 +38,12 @@ const loadAllHotel = () => {
     });
 };
 
-  document.addEventListener("DOMContentLoaded", loadAllHotel);
+document.addEventListener("DOMContentLoaded", loadAllHotel);
+
+
+
+
+
 
 
 
@@ -50,17 +55,19 @@ const loadAllHotel = () => {
     const district = document.getElementById("districts").value;
     const description = document.getElementById("description-name").value;
     const price = document.getElementById("price-night-name").value;
-    const image = document.getElementById("image"); 
+    const imageInput = document.getElementById("image");  
+    const image = imageInput.files[0];
   
 
     const formData = new FormData();
     formData.append("hotel_name", name);
     formData.append("address", address);
     formData.append("available_room", rooms);
-    formData.append("district", district);
+    formData.append("district_names", district);
     formData.append("description", description);
     formData.append("price_per_night",price);
     formData.append("image", image);
+
   
     console.log(formData);
   
@@ -76,6 +83,75 @@ const loadAllHotel = () => {
         console.error("Error:", error);
       });
   };
+
+
+  const loadDistrictsForForm = () => {
+    fetch("http://127.0.0.1:8000/district/")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Districts data:", data); 
+        const districtsDropdown = document.getElementById("districts");
+
+        districtsDropdown.innerHTML = '<option value="" disabled selected>Select District</option>';
+
+        data.forEach((item) => {
+          const option = document.createElement("option");
+          option.value = item.id;
+          option.name = item.id;    
+          option.textContent = item.district_name;  
+          districtsDropdown.appendChild(option);
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching districts:", error);
+      });
+};
+
+
+document.addEventListener("DOMContentLoaded", loadDistrictsForForm);
+
+
+
+
+
+
+
+
+
+
+
+
+// const loadDistrictsForForm = () => {
+//     fetch("http://127.0.0.1:8000/district/")
+//       .then((res) => {
+//         if (!res.ok) {
+//           throw new Error(`Failed to fetch districts: ${res.statusText}`);
+//         }
+//         return res.json();
+//       })
+//       .then((data) => {
+//         const districtsDropdown = document.getElementById("districts");
+  
+
+//         districtsDropdown.innerHTML = '<option value="" disabled selected>Select District</option>';
+  
+      
+//         data.forEach((item) => {
+//           const option = document.createElement("option");
+//           option.value = item.district_name;
+//           option.textContent = item.district_name; 
+//           districtsDropdown.appendChild(option);
+//         });
+//       })
+//       .catch((error) => {
+//         console.error("Error fetching districts:", error);
+//         const districtsDropdown = document.getElementById("districts");
+//         districtsDropdown.innerHTML = '<option value="" disabled>Error loading districts</option>' ;
+//       });
+//   };
+
+
+
 
 
 
@@ -109,34 +185,6 @@ const loadAllHotel = () => {
 
 
 
-const loadDistrictsForForm = () => {
-    fetch("http://127.0.0.1:8000/district/")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Failed to fetch districts: ${res.statusText}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        const districtsDropdown = document.getElementById("districts");
-  
-
-        districtsDropdown.innerHTML = '<option value="" disabled selected>Select District</option>';
-  
-      
-        data.forEach((item) => {
-          const option = document.createElement("option");
-          option.value = item.district_name;
-          option.textContent = item.district_name; 
-          districtsDropdown.appendChild(option);
-        });
-      })
-      .catch((error) => {
-        console.error("Error fetching districts:", error);
-        const districtsDropdown = document.getElementById("districts");
-        districtsDropdown.innerHTML = '<option value="" disabled>Error loading districts</option>' ;
-      });
-  };
 
 
 loadAllUser();
