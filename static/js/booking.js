@@ -23,8 +23,6 @@ hotels.forEach((hotel)=>{
 
 
 
-
-
 const hotelBooked = (event) => {
 event.preventDefault();
 const user_id = localStorage.getItem("user_id");
@@ -163,7 +161,7 @@ const hotelBookeds = (event) => {
 
 const hotelReview=(event)=>{
   event.preventDefault();
-  const user_id = localStorage.getItem("user_id"); // Get the user ID
+  const user_id = localStorage.getItem("user_id"); 
 
   if(user_id){
     const body=document.getElementById("review_body").value.trim();
