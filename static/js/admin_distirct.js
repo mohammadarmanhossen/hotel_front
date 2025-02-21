@@ -1,5 +1,5 @@
 const loadAllDistirct= () => {
-    fetch("http://127.0.0.1:8000/district/")
+    fetch("https://hotel-backend-arcx.onrender.com/district/")
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("districtTableBody");

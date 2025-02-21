@@ -1,7 +1,7 @@
 
 
 const loadAllHotel = () => {
-  fetch("http://127.0.0.1:8000/hotels/")
+  fetch("https://hotel-backend-arcx.onrender.com/hotels/")
     .then((res) => res.json())
     .then((data) => {
       const tableBody = document.getElementById("hotelTableBody");
@@ -86,7 +86,7 @@ const handleHotel = async (event) => {
           formData.append("price_per_night", price);
           formData.append("image_url", imageUrl); 
 
-          return fetch("http://127.0.0.1:8000/hotels/", {
+          return fetch("https://hotel-backend-arcx.onrender.com/hotels/", {
               method: "POST",
               body: formData,
           });
@@ -105,6 +105,8 @@ const handleHotel = async (event) => {
       alert("Something went wrong!");
   });
 };
+
+
 
 
 
@@ -182,7 +184,7 @@ const handleHotel = async (event) => {
 
 
   const loadDistrictsForForm = () => {
-    fetch("http://127.0.0.1:8000/district/")
+    fetch("https://hotel-backend-arcx.onrender.com/district/")
       .then((res) => res.json())
       .then((data) => {
         console.log("Districts data:", data); 
@@ -255,7 +257,7 @@ document.addEventListener("DOMContentLoaded", loadDistrictsForForm);
 
 
   const deleteHotel = (hotelId) => {
-    fetch(`http://127.0.0.1:8000/hotels/${hotelId}/`, {
+    fetch(`https://hotel-backend-arcx.onrender.com/hotels/${hotelId}/`, {
       method: "DELETE",
     })
       .then((res) => res.json())

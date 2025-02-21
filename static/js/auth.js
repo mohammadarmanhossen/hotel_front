@@ -25,7 +25,7 @@ const handleRegistration = (event) => {
       )
        {
         
-        fetch("http://127.0.0.1:8000/client/register/", {
+        fetch("https://hotel-backend-arcx.onrender.com/client/register/", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(info),
@@ -75,7 +75,7 @@ const handleRegistration = (event) => {
       };
   
       // Admin login request
-      fetch("http://127.0.0.1:8000/client/admin/login/", {
+      fetch("https://hotel-backend-arcx.onrender.com/client/admin/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -106,7 +106,7 @@ const handleRegistration = (event) => {
             password: password
           };
           // If admin login fails, check for normal user login
-          fetch("http://127.0.0.1:8000/client/login/", {
+          fetch("https://hotel-backend-arcx.onrender.com/client/login/", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -179,7 +179,7 @@ const handleLogout = (event) => {
     console.log("Logging out...");
     const token = localStorage.getItem("token");
     console.log(token);
-    fetch("http://127.0.0.1:8000/client/logout/", {
+    fetch("https://hotel-backend-arcx.onrender.com/client/logout/", {
       method: "GET",
       headers: {
         Authorization: `Token ${token}`,
@@ -212,7 +212,7 @@ const handleLogout = (event) => {
   const handleAdminLogout = () => {
     const token = localStorage.getItem("token");
 
-    fetch("http://127.0.0.1:8000/client/admin/logout/", {
+    fetch("https://hotel-backend-arcx.onrender.com/client/admin/logout/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

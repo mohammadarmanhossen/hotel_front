@@ -1,7 +1,7 @@
 
 
 const loadAllUser = () => {
-    fetch("http://127.0.0.1:8000/client/users/")
+    fetch("https://hotel-backend-arcx.onrender.com/client/users/")
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("userTableBody");

@@ -1,5 +1,5 @@
 const loadAllContact= () => {
-    fetch("http://127.0.0.1:8000/client/contact/")
+    fetch("https://hotel-backend-arcx.onrender.com/client/contact/")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

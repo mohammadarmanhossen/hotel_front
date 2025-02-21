@@ -1,4 +1,4 @@
-const baseURL = "http://127.0.0.1:8000/hotels/";
+const baseURL = "https://hotel-backend-arcx.onrender.com/hotels/";
 
 const loadServices = (search) => {
   console.log("Search term:", search);
@@ -109,7 +109,7 @@ const hotel_view_booked = (event) => {
     console.log( "booked ", booked);
 
 
-    fetch("http://127.0.0.1:8000/bookeds/", {
+    fetch("https://hotel-backend-arcx.onrender.com/bookeds/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(booked),
@@ -142,7 +142,7 @@ const hotel_view_booked = (event) => {
 
 
 const loadDistrict = () => {
-  fetch("http://127.0.0.1:8000/district/")
+  fetch("https://hotel-backend-arcx.onrender.com/district/")
     .then((res) => res.json())
     .then((data) => {
       const parent = document.getElementById("district");
@@ -172,7 +172,7 @@ const loadHotelDetails = () => {
   const hotelId = params.get("id");
 
 
-  fetch(`http://127.0.0.1:8000/hotels/${hotelId}`)
+  fetch(`https://hotel-backend-arcx.onrender.com/hotels/${hotelId}`)
     .then((res) => res.json())
     .then((data) => displayHotelDetails(data))
     .catch((err) => console.log(err));

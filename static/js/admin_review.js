@@ -1,5 +1,5 @@
 const loadReview= () => {
-    fetch("http://127.0.0.1:8000/reviews/")
+    fetch("https://hotel-backend-arcx.onrender.com/reviews/")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

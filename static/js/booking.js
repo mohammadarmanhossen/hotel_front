@@ -1,7 +1,7 @@
 
 
 const hotel=()=>{
-  fetch("http://127.0.0.1:8000/hotels/")
+  fetch("https://hotel-backend-arcx.onrender.com/hotels/")
   .then((res)=>res.json())
   .then((data)=>console.log(data))
 
@@ -51,7 +51,7 @@ if (!hotel_name || !room || !in_date || !out_date || !total_amount) {
 }
 
 // Submit data to the API
-fetch("http://127.0.0.1:8000/bookeds/", {
+fetch("https://hotel-backend-arcx.onrender.com/bookeds/", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(info),
@@ -111,14 +111,14 @@ const hotelBookeds = (event) => {
   };
   console.log("hello ",info);
   
-  // Validate form fields before submitting
+
   if (!hotel_name || !room || !in_date || !out_date || !total_amount) {
     alert("Please fill in all required fields.");
     return;
   }
   
   // Submit data to the API
-  fetch("http://127.0.0.1:8000/bookeds/", {
+  fetch("https://hotel-backend-arcx.onrender.com/bookeds/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(info),
@@ -178,7 +178,7 @@ const hotelReview=(event)=>{
       icon: 'success',
       confirmButtonText: 'Great!',
     })
-    fetch("http://127.0.0.1:8000/reviews/", {
+    fetch("https://hotel-backend-arcx.onrender.com/reviews/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(reviewData),

@@ -3,7 +3,7 @@ const userProfile = () => {
   const user_id = localStorage.getItem("user_id"); 
   console.log("Logged-in User ID:", user_id);
 
-  fetch("http://127.0.0.1:8000/client/users/")
+  fetch("https://hotel-backend-arcx.onrender.com/client/users/")
     .then((res) => res.json())
     .then((data) => {
       const currentUser = data.find((item) => item.id === parseInt(user_id));
@@ -108,7 +108,7 @@ const loadReview = () => {
   let totalBookings = 0;
   let totalAmount = 0;
 
-  fetch("http://127.0.0.1:8000/bookeds/")
+  fetch("https://hotel-backend-arcx.onrender.com/bookeds/")
       .then((res) => res.json())
       .then((data) => {
           console.log("Fetched Data:", data);
@@ -164,39 +164,11 @@ loadReview();
 
 
 
-// const deleteBooking = (bookingId, bookingAmount) => {
-//   console.log(bookingId);
-//   console.log(bookingAmount);
-//   const confirmation = confirm("Are you sure you want to delete this booking?");
-//   if (confirmation) {
-//     fetch(`http://127.0.0.1:8000/bookeds/${bookingId}/`, {
-//       method: "DELETE",
-//     })
-//     .then((response) => {
-//       if (response.ok) {
-//         totalAmount -= bookingAmount; 
-//         document.getElementById("totalAmountDisplay").innerText = `Total Amount: $${totalAmount.toFixed(2)}`; 
-//         loadReview(); 
-//       } else {
-//         alert("Failed to delete the booking.");
-//       }
-//     })
-//     .catch((error) => {
-//       console.error("Error deleting the booking:", error);
-
-//     });
-//   }
-// };
-
-
-
-
-
 const deleteBooking = (bookingId, bookingAmount) => {
   console.log(bookingId);
   console.log(bookingAmount);
 
-    fetch(`http://127.0.0.1:8000/bookeds/${bookingId}/`, {
+    fetch(`https://hotel-backend-arcx.onrender.com/bookeds/${bookingId}/`, {
       method: "DELETE",
     })
     .then((response) => {

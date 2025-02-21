@@ -4,7 +4,6 @@ const contact = () => {
   console.log("Logged-in User ID:", user_id);
   if(user_id){
 
-
     const subject = document.getElementById('subject_name').value.trim();
     const message = document.getElementById('message_name').value;
     const contactData = {
@@ -13,7 +12,7 @@ const contact = () => {
   
     };
     console.log(contactData);
-    fetch("http://127.0.0.1:8000/client/contact/",{
+    fetch("https://hotel-backend-arcx.onrender.com/client/contact/",{
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(contactData),

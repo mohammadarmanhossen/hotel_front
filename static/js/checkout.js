@@ -13,7 +13,8 @@ document.getElementById('payButton').addEventListener('click', function() {
     const user_id = localStorage.getItem("user_id");
     const name = document.getElementById("name").value || "Default Name";
     const email = document.getElementById("email").value || "default@email.com";
-    fetch("http://127.0.0.1:8000/payment/create_payment/", {
+    
+    fetch("https://hotel-backend-arcx.onrender.com/payment/create_payment/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
