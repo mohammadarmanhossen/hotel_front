@@ -21,6 +21,7 @@ loadServices();
 allhotels();
 
 const displayService = (hotels) => {
+  console.log(hotels);
   const parent = document.getElementById("service-container");
   parent.innerText = "";
   if (!hotels || hotels.length === 0) {
