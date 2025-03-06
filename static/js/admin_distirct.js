@@ -3,7 +3,7 @@ const loadAllDistirct= () => {
       .then((res) => res.json())
       .then((data) => {
         const tableBody = document.getElementById("districtTableBody");
-        tableBody.innerHTML = ""; // Clear any existing rows
+        tableBody.innerHTML = ""; 
         
         data.forEach((item,index) => {
           const row = document.createElement("tr");

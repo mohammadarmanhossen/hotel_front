@@ -16,45 +16,45 @@
 <body>
   <header>
 
+
+
+
     <main>
-      <div class="bar d-flex bg-black">
-        <div class="titel  col-4  px-5 p-2">
+ 
+      <div class="bar d-flex flex-column flex-md-row bg-black text-light">
+        <div class="titel col-12 col-md-4 px-5 p-2">
           <h2 class="text-light mb-4">
             <a href="admin_panel.html" class="text-light text-decoration-none">Admin</a>
-          </h2>  
+          </h2>
         </div>
-        <div class="titel  col-4  px-5 p-2">
-          <h2 class="text-center  text-light mb-4">Distict Management</h2>
+        <div class="titel col-12 col-md-4 px-5 p-2">
+          <h2 class="text-center text-light mb-4">District Management</h2>
         </div>
-        <div class="titel col-4 px-5 p-2">
-
-        
-         
+        <div class="titel col-12 col-md-4 px-5 p-2">
           <div class="ms-auto text-end">
             <button onclick="handleAdminLogout()" class="btn btn-secondary" type="button">
               logout
-              </button>
+            </button>
           </div>
-     
         </div>
       </div>
+    
 
+      <div class="row">
 
-
-
-      <div class="col-12 d-flex">
-
-        <div class="sidebar col-2 bg-secondary text-light vh-100 p-4">
-          <a href="admin_user.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📌Users</a>
-          <a href="admin_hotel.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">🏨 Hotels</a>
+        <div class="sidebar col-12 col-md-2 bg-secondary text-light vh-100 p-4">
+          <a href="admin_panel.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">Dashboard</a>
+          <a href="admin_user.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">👤 Users</a>
+          <a href="admin_hotel.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">🛏️ Hotels</a>
           <a href="admin_contact.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📞 Contacts</a>
           <a href="admin_review.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">⭐ Reviews</a>
-          <a href="admin_district.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">📍 Districts</a>
+          <a href="admin_district.html" class="d-block text-light text-decoration-none py-2 px-3 rounded hover-effect">🏙️ Districts</a>
         </div>
-  
-      <div class="col-10 bg-light vh-100 rounded shadow p-4">
+    
+
+        <div class="col-12 col-md-10 bg-light vh-100 rounded shadow p-4">
           <table class="table table-striped table-bordered shadow-sm">
-            <thead class="thead-dark ">
+            <thead class="thead-dark">
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">District Name</th>
@@ -62,43 +62,19 @@
               </tr>
             </thead>
             <tbody id="districtTableBody">
+
             </tbody>
           </table>
         </div>
       </div>
     </main>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5 fw-bold " id="exampleModalLabel">Add New District</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body d-flex gap-1">
-            <h6>District: </h6>
-            <input id="distict-name" type="text">
-            <h6>Sulg: </h6>
-            <input id="slug-name" class="gap-2" type="text">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button onclick="handleDistirct()" type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- End Modal Area -->
+    
 
 
     <footer class="footer bg-dark text-light py-4">
       <div class="container">
         <div class="row">
-          <!-- Logo and About Section -->
+
           <div class="col-md-4">
             <h3 class="text-uppercase">Hotel</h3>
             <p>Experience luxury and comfort at our hotels. Book your stay with us for an unforgettable experience.</p>
