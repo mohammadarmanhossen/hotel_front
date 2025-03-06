@@ -23,7 +23,7 @@ const userProfile = () => {
                           <h5 id="first_name" class="card-title">First Name:${currentUser.first_name}</h5>
                           <h5 id="last_name" class="card-title">Last Name:${currentUser.last_name}</h5>
                           <p id="email" class="card-text">${currentUser.email }</p>
-                          <a href="#" class="btn btn-primary w-100">Edit Profile</a>
+                          <a href="#" class="btn btn-secondary  w-100">Edit Profile</a>
                       </div>
                   </div>
               </div>
