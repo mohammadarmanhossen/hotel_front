@@ -1,6 +1,6 @@
-# Blue Sky Booking
+# Villagio
 
-[VILLAGIO](https://hotel-front-website.netlify.app/) is a dynamic and responsive hotel booking platform, designed to provide a seamless and engaging user experience for finding and booking accommodations. This `full-stack` application combines the power of `Django REST Framework` for the backend with a modern frontend built using `HTML`, `CSS`, `Bootstrap 5`, and `JavaScript`. The platform is deployed with the backend on Render and the frontend on `Netlify`, ensuring robust and scalable performance.
+[Villagio](https://hotel-front-website.netlify.app/) is a dynamic and responsive hotel booking platform, designed to provide a seamless and engaging user experience for finding and booking accommodations. This `full-stack` application combines the power of `Django REST Framework` for the backend with a modern frontend built using `HTML`, `CSS`, `Bootstrap 5`, and `JavaScript`. The platform is deployed with the backend on Render and the frontend on `Netlify`, ensuring robust and scalable performance.
 
 ## Key Features
 
