@@ -26,7 +26,10 @@
 ### Project Links
 
 - **Live Site**: [Villagio](https://hotel-front-website.netlify.app/)
+- **API Document**:[Villagio All API](https://docs.google.com/document/d/1n99UkifAe7R6N46DeV2hG-OvSnUM3C8Blpj06_Zx52o/edit?usp=sharing)
 
 ---
 
 **Villagio** - Revolutionizing the way you book hotels.
+
+
